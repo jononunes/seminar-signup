@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added procfile for Heroku.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seminar_signup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/settings.py" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added django heroku for database connection.">
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
-      <workItem from="1628499165743" duration="7240000" />
+      <workItem from="1628499165743" duration="7466000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -143,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628511848551</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added django heroku for database connection.">
+      <created>1628512095130</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1628512095130</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +176,7 @@
     <MESSAGE value="Added staticfiles necessities for Heroku." />
     <MESSAGE value="Fixed staticfiles issue." />
     <MESSAGE value="Added procfile for Heroku." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added procfile for Heroku." />
+    <MESSAGE value="Added django heroku for database connection." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added django heroku for database connection." />
   </component>
 </project>
