@@ -1,0 +1,1 @@
+web: gunicorn seminar_signup.wsgi
