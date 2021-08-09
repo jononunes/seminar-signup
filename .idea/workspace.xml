@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Updated models." />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Updated PyCharm stuff.">
+      <change afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seminar_signup/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +28,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/templates/database" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\StefanvonBuddenbrock\PycharmProjects\seminar_signup\database\templates\database" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Run Server" type="Python.DjangoServer" factoryName="Django server">
@@ -62,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
-      <workItem from="1628499165743" duration="5311000" />
+      <workItem from="1628499165743" duration="5662000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -99,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628503941085</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated PyCharm stuff.">
+      <created>1628510137309</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1628510137309</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +139,7 @@
     <MESSAGE value="Added basic git ignore file." />
     <MESSAGE value="Added the first app and models." />
     <MESSAGE value="Updated models." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated models." />
+    <MESSAGE value="Updated PyCharm stuff." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated PyCharm stuff." />
   </component>
 </project>

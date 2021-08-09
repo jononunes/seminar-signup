@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up for seminars</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="https://bootswatch.com/5/slate/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <h3 class="card-header">
+                    Sign up for our seminars below
+                </h3>
+                <form>
+                    <fieldset class="card-body">
+                        <div class="py-2">
+                            <h5 class="card-header">Parent/guardian's details</h5>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label for="parentFirstName" class="form-label my-2">First name</label>
+                                    <input type="text" class="form-control" id="parentFirstName"
+                                           placeholder="Parent/guardian's first name">
+                                </div>
+                                <div class="form-group col">
+                                    <label for="parentFirstName" class="form-label my-2">Last name</label>
+                                    <input type="text" class="form-control" id="parentLastName"
+                                           placeholder="Parent/guardian's last name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="parentEmail" class="form-label my-2">Email address</label>
+                                <input type="email" class="form-control" id="parentEmail"
+                                       placeholder="Parent/guardian's email address">
+                            </div>
+                        </div>
+
+                        <div class="py-2">
+                            <h5 class="card-header">Student's details</h5>
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label for="studentFirstName" class="form-label my-2">First name</label>
+                                    <input type="text" class="form-control" id="studentFirstName"
+                                           placeholder="Student's first name">
+                                </div>
+                                <div class="form-group col">
+                                    <label for="studentFirstName" class="form-label my-2">Last name</label>
+                                    <input type="text" class="form-control" id="studentLastName"
+                                           placeholder="Student's last name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentEmail" class="form-label my-2">Email address</label>
+                                <input type="email" class="form-control" id="studentEmail"
+                                       placeholder="Student's email address">
+                            </div>
+                        </div>
+
+                        <div class="py-2">
+                            <h5 class="card-header">Courses</h5>
+                            <fieldset class="form-group py-2">
+                                <div class="form-check">
+                                    <p>Which level would you like to sign up for?</p>
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="optionsRadios"
+                                               id="optionsRadios1"
+                                               value="option1" checked="">
+                                        Standard level
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="optionsRadios"
+                                               id="optionsRadios2"
+                                               value="option2">
+                                        Advanced level
+                                    </label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form-group py-2">
+                                <div class="form-check">
+                                    <p>Please choose the classes you'd like to sign up for</p>
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked="">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Saturday 24th July, 13:00 - 17:00
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                           checked="">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Sunday 25th July, 13:00 - 17:00
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="exampleTextarea" class="form-label mt-4">Anything else we should know?</label>
+                            <textarea class="form-control" id="exampleTextarea" rows="3"
+                                      placeholder="Additional comments..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

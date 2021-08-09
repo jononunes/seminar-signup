@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from database.views import signup_form
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', signup_form, name='signup-form')
 ]

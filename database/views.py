@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def signup_form(request):
+    return render(request, 'database/signup_form.html')
