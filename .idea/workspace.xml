@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added initial Django files." />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added the first app and models.">
+      <change afterPath="$PROJECT_DIR$/database/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seminar_signup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +30,34 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Run Server" type="Python.DjangoServer" factoryName="Django server">
+      <module name="seminar_signup" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="seminar_signup.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\StefanvonBuddenbrock\PycharmProjects\seminar_signup\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -35,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
-      <workItem from="1628499165743" duration="2293000" />
+      <workItem from="1628499165743" duration="4649000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -44,7 +77,28 @@
       <option name="project" value="LOCAL" />
       <updated>1628501437306</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added PyCharm files.">
+      <created>1628501995394</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1628501995394</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added basic git ignore file.">
+      <created>1628502008647</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628502008647</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added the first app and models.">
+      <created>1628502053916</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1628502053917</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -63,6 +117,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added initial Django files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added initial Django files." />
+    <MESSAGE value="Added PyCharm files." />
+    <MESSAGE value="Added basic git ignore file." />
+    <MESSAGE value="Added the first app and models." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the first app and models." />
   </component>
 </project>

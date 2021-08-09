@@ -9,13 +9,13 @@ class Person(models.Model):
 
 
 class Payment(models.Model):
-    amount_paid = models.DecimalField()
+    amount_paid = models.DecimalField(max_digits=8, decimal_places=2)
 
 
 class Registration(models.Model):
-    parent_guardian = models.ForeignKey(Person, models.CASCADE)
+    parent_guardian = models.OneToOneField(Person, models.CASCADE, related_name="parent_guardian")
     parent_guardian_accepts_waiver = models.BooleanField()
-    child = models.ForeignKey(Person, models.CASCADE)
+    child = models.OneToOneField(Person, models.CASCADE, related_name="child")
     child_accepts_waiver = models.BooleanField()
 
 
@@ -35,5 +35,5 @@ class Seminar(models.Model):
     level = models.CharField(max_length=15, choices=level_choices)
 
     date_and_time = models.DateTimeField()
-    base_price = models.DecimalField()
-
+    base_price = models.DecimalField(max_digits=8, decimal_places=2)
+    course_content = models.TextField()
