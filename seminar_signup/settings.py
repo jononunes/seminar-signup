@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django_heroku
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-4!4c3m@f+$$^tw(u0v_*7p4)co-&fp*id15v4w@(qgqvy(gtm9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['exam-seminars.herokuapp.com']
 
 
 # Application definition
@@ -74,6 +76,8 @@ WSGI_APPLICATION = 'seminar_signup.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+django_heroku.settings(locals())
 
 DATABASES = {
     'default': {
