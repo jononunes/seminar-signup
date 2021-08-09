@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Started making ready for Heroku.">
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added staticfiles necessities for Heroku.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seminar_signup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/settings.py" afterDir="false" />
     </list>
@@ -70,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
-      <workItem from="1628499165743" duration="6581000" />
+      <workItem from="1628499165743" duration="6678000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -121,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628510755320</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added staticfiles necessities for Heroku.">
+      <created>1628511451777</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1628511451777</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +153,7 @@
     <MESSAGE value="Updated models." />
     <MESSAGE value="Updated PyCharm stuff." />
     <MESSAGE value="Started making ready for Heroku." />
-    <option name="LAST_COMMIT_MESSAGE" value="Started making ready for Heroku." />
+    <MESSAGE value="Added staticfiles necessities for Heroku." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added staticfiles necessities for Heroku." />
   </component>
 </project>
