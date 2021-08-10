@@ -37,6 +37,7 @@ class Seminar(models.Model):
     date_and_time = models.DateTimeField()
     base_price = models.DecimalField(max_digits=8, decimal_places=2)
     course_content = models.TextField()
+    capacity = models.IntegerField(default=20)
 
     def __str__(self):
         return f"{self.subject} - {self.level}"
