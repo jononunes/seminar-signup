@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added a string representation for the seminars.">
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added a capacity field to the seminar.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
     </list>
@@ -70,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
-      <workItem from="1628499165743" duration="9547000" />
+      <workItem from="1628499165743" duration="10261000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -170,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628513249324</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added a capacity field to the seminar.">
+      <created>1628608995510</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1628608995510</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +208,7 @@
     <MESSAGE value="Added django heroku for database connection." />
     <MESSAGE value="Trying to flip the database thing around." />
     <MESSAGE value="Added a string representation for the seminars." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a string representation for the seminars." />
+    <MESSAGE value="Added a capacity field to the seminar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a capacity field to the seminar." />
   </component>
 </project>

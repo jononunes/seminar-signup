@@ -12,13 +12,6 @@ class Payment(models.Model):
     amount_paid = models.DecimalField(max_digits=8, decimal_places=2)
 
 
-class Registration(models.Model):
-    parent_guardian = models.OneToOneField(Person, models.CASCADE, related_name="parent_guardian")
-    parent_guardian_accepts_waiver = models.BooleanField()
-    child = models.OneToOneField(Person, models.CASCADE, related_name="child")
-    child_accepts_waiver = models.BooleanField()
-
-
 class Seminar(models.Model):
     subject_choices = [
         ("MATHS_P1", "Maths Paper 1"),
@@ -41,3 +34,11 @@ class Seminar(models.Model):
 
     def __str__(self):
         return f"{self.subject} - {self.level}"
+
+
+class Registration(models.Model):
+    parent_guardian = models.OneToOneField(Person, models.CASCADE, related_name="parent_guardian")
+    parent_guardian_accepts_waiver = models.BooleanField()
+    child = models.OneToOneField(Person, models.CASCADE, related_name="child")
+    child_accepts_waiver = models.BooleanField()
+    registered_seminars = models.ManyToManyField(Seminar)
