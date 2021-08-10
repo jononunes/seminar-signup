@@ -7,9 +7,8 @@ class Person(models.Model):
     email_address = models.EmailField()
     cellphone_number = models.CharField(max_length=11, null=True)
 
-
-class Payment(models.Model):
-    amount_paid = models.DecimalField(max_digits=8, decimal_places=2)
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
 
 
 class Seminar(models.Model):
@@ -33,7 +32,7 @@ class Seminar(models.Model):
     capacity = models.IntegerField(default=20)
 
     def __str__(self):
-        return f"{self.subject} - {self.level}"
+        return f"{self.subject} - {self.level} [{self.date_and_time}]"
 
 
 class Registration(models.Model):
@@ -42,3 +41,14 @@ class Registration(models.Model):
     child = models.OneToOneField(Person, models.CASCADE, related_name="child")
     child_accepts_waiver = models.BooleanField()
     registered_seminars = models.ManyToManyField(Seminar)
+
+    def __str__(self):
+        return f"{self.child} - [{self.registered_seminars.count()} seminar(s)]"
+
+
+class Payment(models.Model):
+    amount_paid = models.DecimalField(max_digits=8, decimal_places=2)
+    registration = models.ForeignKey(Registration, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"R{self.amount_paid} - {self.registration.parent_guardian} / {self.registration.child}"

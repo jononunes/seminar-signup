@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added a capacity field to the seminar.">
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added workspace to gitignore">
+      <change afterPath="$PROJECT_DIR$/database/migrations/0004_payment_registration.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
     </list>
@@ -70,7 +71,8 @@
       <option name="presentableId" value="Default" />
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
-      <workItem from="1628499165743" duration="10261000" />
+      <workItem from="1628499165743" duration="10439000" />
+      <workItem from="1628609908758" duration="1268000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -177,7 +179,28 @@
       <option name="project" value="LOCAL" />
       <updated>1628608995510</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added a field to track registered seminars.">
+      <created>1628609705474</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1628609705474</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added workspace to gitignore">
+      <created>1628610198240</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1628610198240</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added workspace to gitignore">
+      <created>1628610251274</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1628610251274</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,11 +211,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added initial Django files." />
@@ -209,6 +245,8 @@
     <MESSAGE value="Trying to flip the database thing around." />
     <MESSAGE value="Added a string representation for the seminars." />
     <MESSAGE value="Added a capacity field to the seminar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a capacity field to the seminar." />
+    <MESSAGE value="Added a field to track registered seminars." />
+    <MESSAGE value="Added workspace to gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added workspace to gitignore" />
   </component>
 </project>
