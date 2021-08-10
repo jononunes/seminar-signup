@@ -41,6 +41,7 @@ class Registration(models.Model):
     child = models.OneToOneField(Person, models.CASCADE, related_name="child")
     child_accepts_waiver = models.BooleanField()
     registered_seminars = models.ManyToManyField(Seminar)
+    additional_info = models.TextField(blank=True, default="")
 
     def __str__(self):
         return f"{self.child} - [{self.registered_seminars.count()} seminar(s)]"
