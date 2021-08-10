@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added workspace to gitignore">
-      <change afterPath="$PROJECT_DIR$/database/migrations/0004_payment_registration.py" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Updated models to include string representations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,7 @@
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
-      <workItem from="1628609908758" duration="1268000" />
+      <workItem from="1628609908758" duration="2511000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -200,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628610251274</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Updated models to include string representations.">
+      <created>1628611253528</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1628611253528</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +254,7 @@
     <MESSAGE value="Added a capacity field to the seminar." />
     <MESSAGE value="Added a field to track registered seminars." />
     <MESSAGE value="Added workspace to gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added workspace to gitignore" />
+    <MESSAGE value="Updated models to include string representations." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated models to include string representations." />
   </component>
 </project>
