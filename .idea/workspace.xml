@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Updated page.">
-      <change afterPath="$PROJECT_DIR$/database/static/database/covid_waiver.txt" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Updated template with loading seminars and covid waiver link.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seminar_signup/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/urls.py" afterDir="false" />
@@ -74,7 +74,7 @@
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
-      <workItem from="1628609908758" duration="4654000" />
+      <workItem from="1628609908758" duration="7415000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -223,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628612474071</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Updated template with loading seminars and covid waiver link.">
+      <created>1628696487617</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1628696487617</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +280,7 @@
     <MESSAGE value="Updated models to include string representations." />
     <MESSAGE value="Added additional info to registration." />
     <MESSAGE value="Updated page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated page." />
+    <MESSAGE value="Updated template with loading seminars and covid waiver link." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated template with loading seminars and covid waiver link." />
   </component>
 </project>
