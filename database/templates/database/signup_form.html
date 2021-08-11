@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign up for seminars</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -14,7 +16,7 @@
 <body>
 <div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-md-6 col-sm-1"> TODO FIX!
+        <div class="col-lg-6 col-md-12">
             <div class="card">
                 <h3 class="card-header">
                     Sign up for our seminars below
@@ -48,7 +50,7 @@
                             <div class="form-check my-2">
                                 <input class="form-check-input" type="checkbox" value="" id="parentCovidWaiver">
                                 <label class="form-check-label" for="parentCovidWaiver">
-                                    Do you (the parent/guardian) accept the <a href="#">Covid waiver</a>?
+                                    Do you (the parent/guardian) accept the <a href="{% static 'database/covid_waiver.txt' %}">Covid waiver</a>?
                                 </label>
                             </div>
                         </div>
@@ -80,53 +82,35 @@
                             <div class="form-check my-2">
                                 <input class="form-check-input" type="checkbox" value="" id="parentCovidWaiver">
                                 <label class="form-check-label" for="parentCovidWaiver">
-                                    Do you (the student) accept the <a href="#">Covid waiver</a>?
+                                    Do you (the student) accept the <a href="{% static 'database/covid_waiver.txt' %}">Covid waiver</a>?
                                 </label>
                             </div>
                         </div>
 
                         <div class="py-2">
                             <h5 class="card-header">Courses</h5>
-                            <p>Info on the course difficulties</p>
+                            <h6 class="my-2 text-info">Note on the course levels:</h6>
+                            <p><i>Standard level</i> courses are teaching focussed for students who are not completely
+                                comfortable with the content.</p>
+                            <p><i>Advanced level</i> courses are practice focussed for students who are comfortable with
+                                the content and would like more practice.</p>
                             <fieldset class="form-group py-2">
-                                <div class="form-check">
-                                    <p>Which level would you like to sign up for?</p>
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios"
-                                               id="optionsRadios1"
-                                               value="option1" checked="">
-                                        Standard level
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optionsRadios"
-                                               id="optionsRadios2"
-                                               value="option2">
-                                        Advanced level
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <fieldset class="form-group py-2">
-                                <div class="form-check">
-                                    <p>Please choose the classes you'd like to sign up for</p>
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        Saturday 24th July, 13:00 - 17:00
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                        Sunday 25th July, 13:00 - 17:00
-                                    </label>
-                                </div>
+                                {% for seminar in seminars %}
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                               id="seminarCheckBox{{ seminar.id }}">
+                                        <label class="form-check-label" for="seminarCheckBox{{ seminar.id }}">
+                                            {{ seminar.get_subject_display }} ({{ seminar.get_level_display }} level)
+                                            - {{ seminar.date_and_time }} [R{{ seminar.base_price }}]
+                                        </label>
+                                    </div>
+                                {% endfor %}
                             </fieldset>
                         </div>
                         <div class="form-group py-2">
-                            <label for="exampleTextarea" class="form-label mt-4">Anything else we should know?</label>
-                            <textarea class="form-control text-light" id="exampleTextarea" rows="3"
+                            <label for="additionalInfoTextArea" class="form-label mt-4">Anything else we should
+                                know?</label>
+                            <textarea class="form-control text-light" id="additionalInfoTextArea" rows="3"
                                       placeholder="Additional comments..."></textarea>
                         </div>
 
