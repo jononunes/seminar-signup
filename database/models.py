@@ -10,6 +10,12 @@ class Person(models.Model):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
+    def __eq__(self, other):
+        return self.first_name == other.first_name and \
+               self.last_name == other.last_name and \
+               self.email_address == other.email_address and \
+               self.cellphone_number == other.cellphone_number
+
 
 class Seminar(models.Model):
     subject_choices = [
@@ -42,6 +48,7 @@ class Registration(models.Model):
     child_accepts_waiver = models.BooleanField()
     registered_seminars = models.ManyToManyField(Seminar)
     additional_info = models.TextField(blank=True, default="")
+    time_registered = models.DateTimeField(default=None)
 
     def __str__(self):
         return f"{self.child}"

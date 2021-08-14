@@ -1,3 +1,5 @@
+from django.utils import timezone
+
 from django.shortcuts import render, redirect
 
 from database.models import Seminar, Person, Registration
@@ -29,11 +31,14 @@ def register(request):
         parent_accepts_waiver = 'parentCovidWaiver' in request.POST
         student_accepts_waiver = 'studentCovidWaiver' in request.POST
 
+        time_registered = timezone.now()
+
         registration = Registration(parent_guardian=parent,
                                     parent_guardian_accepts_waiver=parent_accepts_waiver,
                                     child=student,
                                     child_accepts_waiver=student_accepts_waiver,
-                                    additional_info=request.POST['additionalInfoTextArea'])
+                                    additional_info=request.POST['additionalInfoTextArea'],
+                                    time_registered=time_registered)
 
         registration.save()
 
