@@ -27,6 +27,9 @@ SECRET_KEY = 'django-insecure-4!4c3m@f+$$^tw(u0v_*7p4)co-&fp*id15v4w@(qgqvy(gtm9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+PAYFAST_URL = "https://sandbox.payfast.co.za/eng/process"
+# When going live: PAYFAST_URL = "https://www.payfast.co.za/eng/process"
+
 ALLOWED_HOSTS = ['exam-seminars.herokuapp.com']
 
 
