@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+    <script src="{% static 'database/helpers.js' %}"></script>
     <link href="https://bootswatch.com/5/slate/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -111,7 +112,10 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value=""
                                                id="seminarCheckBox{{ seminar.id }}"
-                                               name="seminarCheckBox{{ seminar.id }}">
+                                               name="seminarCheckBox{{ seminar.id }}"
+                                               onclick="reset_payment_button()"
+                                               data-price="{{ seminar.base_price }}"
+                                        >
                                         <label class="form-check-label" for="seminarCheckBox{{ seminar.id }}">
                                             {{ seminar.get_subject_display }} ({{ seminar.get_level_display }} level)
                                             - {{ seminar.date_and_time }} [R{{ seminar.base_price }}]
@@ -135,10 +139,10 @@
     <footer class="footer fixed-bottom mt-5 py-3 bg-primary">
         <div class="container">
             <div class="d-flex justify-content-center">
-                <h3>Total cost: RXXX.XX</h3>
+                <h3 class="text-center" id="paymentText"></h3>
             </div>
             <div class="d-flex justify-content-center">
-                <button type="submit" value="OK" class="btn btn-danger">PAY NOW</button>
+                <button disabled type="submit" value="OK" class="btn btn-danger" id="paymentButton">PAY NOW</button>
             </div>
         </div>
     </footer>
