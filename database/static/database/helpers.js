@@ -30,8 +30,10 @@ function reset_payment_button() {
     if (has_selected_one_checkbox) {
         button.disabled = false;
         text.textContent = "Total cost: R" + get_total_cost(tickedCheckboxes)
+        button.className = "btn btn-success"
     } else {
         button.disabled = true;
         text.textContent = "Please select at least one seminar"
+        button.className = "btn btn-secondary"
     }
 }

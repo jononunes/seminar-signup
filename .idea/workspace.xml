@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added a bottom border on the template.">
-      <change afterPath="$PROJECT_DIR$/database/static/database/helpers.js" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added javascript to calculate price.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/static/database/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +79,7 @@
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
-      <workItem from="1628609908758" duration="18010000" />
+      <workItem from="1628609908758" duration="19064000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -270,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629047651747</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added javascript to calculate price.">
+      <created>1629051213002</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1629051213002</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +308,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added initial Django files." />
     <MESSAGE value="Added PyCharm files." />
     <MESSAGE value="Added basic git ignore file." />
     <MESSAGE value="Added the first app and models." />
@@ -326,6 +332,7 @@
     <MESSAGE value="Added a time registered field." />
     <MESSAGE value="Edited the time registered field." />
     <MESSAGE value="Added a bottom border on the template." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a bottom border on the template." />
+    <MESSAGE value="Added javascript to calculate price." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added javascript to calculate price." />
   </component>
 </project>
