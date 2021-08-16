@@ -8,7 +8,11 @@ from database.models import Seminar, Person, Registration
 
 
 def signup_form(request):
-    context = {'seminars': Seminar.objects.all()}
+    context = {
+        'seminars': sorted(Seminar.objects.filter(date_and_time__gt=timezone.now()), key=lambda x: x.date_and_time),
+        'merchant_id': settings.PAYFAST_MERCHANT_ID,
+        'merchant_key': settings.PAYFAST_MERCHANT_KEY
+    }
     return render(request, 'database/signup_form.html', context=context)
 
 

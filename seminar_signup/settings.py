@@ -29,6 +29,8 @@ DEBUG = True
 
 PAYFAST_URL = "https://sandbox.payfast.co.za/eng/process"
 # When going live: PAYFAST_URL = "https://www.payfast.co.za/eng/process"
+PAYFAST_MERCHANT_ID = "17925155"
+PAYFAST_MERCHANT_KEY = "xnw6s4bubphbi"
 
 ALLOWED_HOSTS = ['exam-seminars.herokuapp.com']
 

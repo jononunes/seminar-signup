@@ -23,17 +23,26 @@ function get_total_cost(tickedCheckboxes) {
 function reset_payment_button() {
     const button = document.getElementById('paymentButton')
     const text = document.getElementById('paymentText')
+    const itemName = document.getElementsByName('item_name')[0];
+    const amount = document.getElementsByName('amount')[0]
     let tickedCheckboxes = get_ticked_checkboxes()
 
     let has_selected_one_checkbox = tickedCheckboxes.length > 0
 
     if (has_selected_one_checkbox) {
+        let total_cost = get_total_cost(tickedCheckboxes)
+
         button.disabled = false;
-        text.textContent = "Total cost: R" + get_total_cost(tickedCheckboxes)
+        text.textContent = "Total cost: R" + total_cost
         button.className = "btn btn-success"
+        itemName.value = "Registration fee for " + tickedCheckboxes.length + " seminar(s)"
+        amount.value = total_cost
+
     } else {
         button.disabled = true;
         text.textContent = "Please select at least one seminar"
         button.className = "btn btn-secondary"
+        itemName.value = ""
+        amount.value = ""
     }
 }
