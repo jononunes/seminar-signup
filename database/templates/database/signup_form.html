@@ -15,7 +15,7 @@
     <link href="https://bootswatch.com/5/slate/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<form action="{% url 'register' %}" method="post">
+<form action="{{ payfast_url }}" method="post">
     {% csrf_token %}
 
     <!-- PayFast stuff -->
