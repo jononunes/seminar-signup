@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Adding initial functionality to get payment info.">
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Finished up javascript to push the data through.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/static/database/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,7 @@
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
-      <workItem from="1628609908758" duration="29525000" />
+      <workItem from="1628609908758" duration="30910000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -323,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629212301405</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Finished up javascript to push the data through.">
+      <created>1629213286464</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1629213286464</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +360,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Started making ready for Heroku." />
     <MESSAGE value="Added staticfiles necessities for Heroku." />
     <MESSAGE value="Fixed staticfiles issue." />
     <MESSAGE value="Added procfile for Heroku." />
@@ -379,6 +384,7 @@
     <MESSAGE value="Added basic payfast fields." />
     <MESSAGE value="Changed so that payfast is not a redirect." />
     <MESSAGE value="Adding initial functionality to get payment info." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding initial functionality to get payment info." />
+    <MESSAGE value="Finished up javascript to push the data through." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished up javascript to push the data through." />
   </component>
 </project>
