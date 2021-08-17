@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Pushing up changes for registering seminars.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/static/database/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/helpers.js" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Updated cell number field.">
+      <change beforePath="$PROJECT_DIR$/database/static/database/covid_waiver.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +89,7 @@
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
-      <workItem from="1628609908758" duration="32511000" />
+      <workItem from="1628609908758" duration="32843000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -345,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629216149314</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Updated cell number field.">
+      <created>1629216570257</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1629216570257</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +381,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added procfile for Heroku." />
     <MESSAGE value="Added django heroku for database connection." />
     <MESSAGE value="Trying to flip the database thing around." />
     <MESSAGE value="Added a string representation for the seminars." />
@@ -401,6 +405,7 @@
     <MESSAGE value="Finished up javascript to push the data through." />
     <MESSAGE value="Pushing up to test registration." />
     <MESSAGE value="Pushing up changes for registering seminars." />
-    <option name="LAST_COMMIT_MESSAGE" value="Pushing up changes for registering seminars." />
+    <MESSAGE value="Updated cell number field." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated cell number field." />
   </component>
 </project>
