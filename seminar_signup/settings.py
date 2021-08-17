@@ -36,6 +36,10 @@ else:
     PAYFAST_MERCHANT_ID = "17925155"
     PAYFAST_MERCHANT_KEY = "xnw6s4bubphbi"
 
+PAYFAST_RETURN_URL = "https://exam-seminars.herokuapp.com/success"
+PAYFAST_NOTIFY_URL = "https://exam-seminars.herokuapp.com/register/"
+PAYFAST_CANCEL_URL = "https://exam-seminars.herokuapp.com/cancel"
+
 ALLOWED_HOSTS = ['exam-seminars.herokuapp.com']
 
 # Application definition

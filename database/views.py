@@ -6,18 +6,24 @@ from django.shortcuts import render, HttpResponse
 
 from database.models import Seminar, Person, Registration
 
+from django.views.decorators.csrf import csrf_exempt
+
 
 def signup_form(request):
     context = {
         'seminars': sorted(Seminar.objects.filter(date_and_time__gt=timezone.now()), key=lambda x: x.date_and_time),
         'merchant_id': settings.PAYFAST_MERCHANT_ID,
         'merchant_key': settings.PAYFAST_MERCHANT_KEY,
-        'payfast_url': settings.PAYFAST_URL
+        'payfast_url': settings.PAYFAST_URL,
+        'return_url': settings.PAYFAST_RETURN_URL,
+        'cancel_url': settings.PAYFAST_CANCEL_URL,
+        'notify_url': settings.PAYFAST_NOTIFY_URL,
     }
 
     return render(request, 'database/signup_form.html', context=context)
 
 
+@csrf_exempt
 def register(request):
     if request.method == "POST":
         # Make the parent
