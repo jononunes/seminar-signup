@@ -30,7 +30,7 @@ def register(request):
         parent = Person(first_name=request.POST['name_first'],
                         last_name=request.POST['name_last'],
                         email_address=request.POST['email_address'],
-                        cellphone_number=request.POST['cell_number'])
+                        cellphone_number=request.POST['custom_str5'])
 
         # Make the student
         # The student info is part of the custom_str1 data

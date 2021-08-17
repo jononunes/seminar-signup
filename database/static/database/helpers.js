@@ -56,6 +56,7 @@ function generate_payment_info() {
     const custom_str2_field = document.getElementsByName("custom_str2")[0]; // For covid acceptance
     const custom_str3_field = document.getElementsByName("custom_str3")[0]; // For chosen seminars
     const custom_str4_field = document.getElementsByName("custom_str4")[0]; // For additional info
+    const custom_str5_field = document.getElementsByName("custom_str5")[0]; // For parent cell number
 
     // Calculate the total amount
     let tickedCheckboxes = get_ticked_checkboxes()
@@ -85,6 +86,9 @@ function generate_payment_info() {
     // Additional info
     const additional_info_field = document.getElementById("additionalInfoTextArea")
 
+    // Cell number
+    const cell_number = document.getElementById("cell_number")
+
     amount_field.value = total_cost
     item_name_field.value = "Registration fee for " + tickedCheckboxes.length + " seminar(s)"
     m_payment_id_field.value = payment_id
@@ -92,4 +96,5 @@ function generate_payment_info() {
     custom_str2_field.value = covid_info
     custom_str3_field.value = seminar_info
     custom_str4_field.value = additional_info_field.value
+    custom_str5_field.value = cell_number.value
 }
