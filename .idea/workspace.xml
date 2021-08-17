@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Changed so that payfast is not a redirect.">
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Adding initial functionality to get payment info.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/static/database/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seminar_signup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seminar_signup/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +90,7 @@
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
-      <workItem from="1628609908758" duration="28470000" />
+      <workItem from="1628609908758" duration="29525000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -319,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629128705759</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Adding initial functionality to get payment info.">
+      <created>1629212301405</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1629212301405</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +354,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated PyCharm stuff." />
     <MESSAGE value="Started making ready for Heroku." />
     <MESSAGE value="Added staticfiles necessities for Heroku." />
     <MESSAGE value="Fixed staticfiles issue." />
@@ -375,6 +378,7 @@
     <MESSAGE value="Added dummy link to payfast sandbox." />
     <MESSAGE value="Added basic payfast fields." />
     <MESSAGE value="Changed so that payfast is not a redirect." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed so that payfast is not a redirect." />
+    <MESSAGE value="Adding initial functionality to get payment info." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding initial functionality to get payment info." />
   </component>
 </project>

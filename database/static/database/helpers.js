@@ -52,14 +52,44 @@ function generate_payment_info() {
     const amount_field = document.getElementsByName('amount')[0]
     const item_name_field = document.getElementsByName('item_name')[0];
     const m_payment_id_field = document.getElementsByName('m_payment_id')[0];
+    const custom_str1_field = document.getElementsByName("custom_str1")[0]; // For student details
+    const custom_str2_field = document.getElementsByName("custom_str2")[0]; // For covid acceptance
+    const custom_str3_field = document.getElementsByName("custom_str3")[0]; // For chosen seminars
+    const custom_str4_field = document.getElementsByName("custom_str4")[0]; // For additional info
 
     // Calculate the total amount
     let tickedCheckboxes = get_ticked_checkboxes()
     let total_cost = get_total_cost(tickedCheckboxes)
 
+    // Payment ID
     let payment_id = uuidv4()
+
+    // Student details
+    const student_first_name_field = document.getElementById('studentFirstName')
+    const student_last_name_field = document.getElementById('studentLastName')
+    const student_email_field = document.getElementById('studentEmail')
+    const student_phone_number_field = document.getElementById('studentPhoneNumber')
+    let student_information = student_first_name_field.value + "," + student_last_name_field.value + "," + student_email_field.value + "," + student_phone_number_field.value
+
+    // Covid acceptance
+    const parent_covid_acceptance = document.getElementById('parentCovidWaiver')
+    const student_covid_acceptance = document.getElementById('studentCovidWaiver')
+    let covid_info = parent_covid_acceptance.checked + "," + student_covid_acceptance.checked
+
+    // Chosen seminars
+    let seminar_info = tickedCheckboxes[0].getAttribute("data-id")
+    for (let i = 1; i < tickedCheckboxes.length; i++) {
+        seminar_info += "," + tickedCheckboxes[i].getAttribute("data-id")
+    }
+
+    // Additional info
+    const additional_info_field = document.getElementById("additionalInfoTextArea")
 
     amount_field.value = total_cost
     item_name_field.value = "Registration fee for " + tickedCheckboxes.length + " seminar(s)"
     m_payment_id_field.value = payment_id
+    custom_str1_field.value = student_information
+    custom_str2_field.value = covid_info
+    custom_str3_field.value = seminar_info
+    custom_str4_field.value = additional_info_field.value
 }
