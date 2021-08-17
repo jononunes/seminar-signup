@@ -14,9 +14,9 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 import django_heroku
+from django.contrib import messages
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -27,13 +27,16 @@ SECRET_KEY = 'django-insecure-4!4c3m@f+$$^tw(u0v_*7p4)co-&fp*id15v4w@(qgqvy(gtm9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-PAYFAST_URL = "https://sandbox.payfast.co.za/eng/process"
-# When going live: PAYFAST_URL = "https://www.payfast.co.za/eng/process"
-PAYFAST_MERCHANT_ID = "17925155"
-PAYFAST_MERCHANT_KEY = "xnw6s4bubphbi"
+if DEBUG:
+    PAYFAST_URL = "https://sandbox.payfast.co.za/eng/process"
+    PAYFAST_MERCHANT_ID = "10000100"
+    PAYFAST_MERCHANT_KEY = "46f0cd694581a"
+else:
+    PAYFAST_URL = "https://www.payfast.co.za/eng/process"
+    PAYFAST_MERCHANT_ID = "17925155"
+    PAYFAST_MERCHANT_KEY = "xnw6s4bubphbi"
 
 ALLOWED_HOSTS = ['exam-seminars.herokuapp.com']
-
 
 # Application definition
 
@@ -78,7 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'seminar_signup.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -109,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -123,7 +124,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -135,3 +135,11 @@ STATICFILES_DIRS = []
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'danger',
+}

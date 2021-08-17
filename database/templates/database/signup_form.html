@@ -15,14 +15,42 @@
     <link href="https://bootswatch.com/5/slate/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="text-center alert alert-dismissible alert-{{ message.tags }}">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <h4 class="alert-heading">{% if message.level == 40 %}Error{% elif message.level == 25 %}
+                Success{% elif message.level == 20 %}Info{% endif %}</h4>
+            <p class="mb-0">{{ message }}</p>
+        </div>
+    {% endfor %}
+{% endif %}
+
 <form action="{{ payfast_url }}" method="post">
     {% csrf_token %}
 
     <!-- PayFast stuff -->
     <input type="hidden" name="merchant_id" value="{{ merchant_id }}">
     <input type="hidden" name="merchant_key" value="{{ merchant_key }}">
-    <input type="hidden" name="amount" value="100.00">
+    <input type="hidden" name="amount" value="">
     <input type="hidden" name="item_name" value="">
+    <input type="hidden" name="return_url" value="{% url 'success' %}">
+    <input type="hidden" name="cancel_url" value="{% url 'cancel' %}">
+    <input type="hidden" name="notify_url" value="{% url 'register' %}">
+    <input type="hidden" name="m_payment_id" value="">
+    <input type="hidden" name="item_description" value="">
+    <input type="hidden" name="email_confirmation" value="1">
+    <input type="hidden" name="confirmation_address" value="nicklasvbud@gmail.com">
+    <!-- For the students details [first,last,email,cell] -->
+    <input type="hidden" name="custom_str1" value="">
+    <!-- For the covid waiver acceptance [bool,bool] -->
+    <input type="hidden" name="custom_str2" value="">
+    <!-- For the chosen seminars [id,id,id,...] -->
+    <input type="hidden" name="custom_str3" value="">
+    <!-- For the additional info -->
+    <input type="hidden" name="custom_str4" value="">
+
 
     <div class="container my-5" style="padding-bottom:80px">
         <div class="row justify-content-center">
@@ -36,27 +64,28 @@
                             <h5 class="card-header">Parent/guardian's details</h5>
                             <div class="row">
                                 <div class="form-group col">
-                                    <label for="parentFirstName" class="form-label my-2">First name</label>
-                                    <input type="text" class="form-control text-light" id="parentFirstName"
-                                           name="parentFirstName"
+                                    <label for="name_first" class="form-label my-2">First name</label>
+                                    <input type="text" class="form-control text-light" id="name_first"
+                                           name="name_first"
                                            placeholder="Parent/guardian's first name" required>
                                 </div>
                                 <div class="form-group col">
-                                    <label for="parentLastName" class="form-label my-2">Last name</label>
-                                    <input type="text" class="form-control text-light" id="parentLastName"
-                                           name="parentLastName"
+                                    <label for="name_last" class="form-label my-2">Last name</label>
+                                    <input type="text" class="form-control text-light" id="name_last"
+                                           name="name_last"
                                            placeholder="Parent/guardian's last name" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="parentEmail" class="form-label my-2">Email address</label>
-                                <input type="email" class="form-control text-light" id="parentEmail" name="parentEmail"
+                                <label for="email_address" class="form-label my-2">Email address</label>
+                                <input type="email" class="form-control text-light" id="email_address"
+                                       name="email_address"
                                        placeholder="Parent/guardian's email address" required>
                             </div>
                             <div class="form-group">
-                                <label for="parentPhoneNumber" class="form-label my-2">Contact number</label>
-                                <input type="tel" class="form-control text-light" id="parentPhoneNumber"
-                                       name="parentPhoneNumber"
+                                <label for="cell_number" class="form-label my-2">Contact number</label>
+                                <input type="tel" class="form-control text-light" id="cell_number"
+                                       name="cell_number"
                                        placeholder="Parent/guardian's contact number">
                             </div>
                             <div class="form-check my-2">
@@ -149,7 +178,7 @@
                 <h3 class="text-center" id="paymentText"></h3>
             </div>
             <div class="d-flex justify-content-center">
-                <button disabled type="submit" value="OK" class="btn btn-secondary" id="paymentButton">PAY NOW</button>
+                <button disabled type="submit" value="OK" class="btn btn-secondary" id="paymentButton" onclick="generate_payment_info()">PAY NOW</button>
             </div>
         </div>
     </footer>

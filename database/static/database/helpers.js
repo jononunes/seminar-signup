@@ -23,8 +23,7 @@ function get_total_cost(tickedCheckboxes) {
 function reset_payment_button() {
     const button = document.getElementById('paymentButton')
     const text = document.getElementById('paymentText')
-    const itemName = document.getElementsByName('item_name')[0];
-    const amount = document.getElementsByName('amount')[0]
+
     let tickedCheckboxes = get_ticked_checkboxes()
 
     let has_selected_one_checkbox = tickedCheckboxes.length > 0
@@ -35,14 +34,32 @@ function reset_payment_button() {
         button.disabled = false;
         text.textContent = "Total cost: R" + total_cost
         button.className = "btn btn-success"
-        itemName.value = "Registration fee for " + tickedCheckboxes.length + " seminar(s)"
-        amount.value = total_cost
-
     } else {
         button.disabled = true;
         text.textContent = "Please select at least one seminar"
         button.className = "btn btn-secondary"
-        itemName.value = ""
-        amount.value = ""
     }
+}
+
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+function generate_payment_info() {
+    const amount_field = document.getElementsByName('amount')[0]
+    const item_name_field = document.getElementsByName('item_name')[0];
+    const m_payment_id_field = document.getElementsByName('m_payment_id')[0];
+
+    // Calculate the total amount
+    let tickedCheckboxes = get_ticked_checkboxes()
+    let total_cost = get_total_cost(tickedCheckboxes)
+
+    let payment_id = uuidv4()
+
+    amount_field.value = total_cost
+    item_name_field.value = "Registration fee for " + tickedCheckboxes.length + " seminar(s)"
+    m_payment_id_field.value = payment_id
 }

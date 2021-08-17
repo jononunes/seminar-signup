@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from database.views import signup_form, register
+from database.views import signup_form, register, success, cancel
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', signup_form, name='signup-form'),
-    path('register/', register, name='register')
+    path('register/', register, name='register'),
+    path('success/', success, name='success'),
+    path('cancel/', cancel, name='cancel'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -14,11 +14,8 @@ def signup_form(request):
         'merchant_key': settings.PAYFAST_MERCHANT_KEY,
         'payfast_url': settings.PAYFAST_URL
     }
+
     return render(request, 'database/signup_form.html', context=context)
-
-
-def initial_payment_info_is_valid(post_data):
-    return True
 
 
 def register(request):
@@ -60,3 +57,13 @@ def register(request):
                 registration.registered_seminars.add(seminar)
 
     return redirect("signup-form")
+
+
+def success(request):
+    messages.success(request, "You have successfully registered! A confirmation email will be sent to you shortly.")
+    return render(request, 'database/signup_form.html')
+
+
+def cancel(request):
+    messages.info(request, "Something has gone wrong with the payment, please try again.")
+    return render(request, 'database/signup_form.html')
