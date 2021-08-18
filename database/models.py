@@ -53,6 +53,19 @@ class Seminar(models.Model):
         return self.get_spaces_remaining() <= 0
 
     @staticmethod
+    def get_distinct_subjects():
+        all_seminars = Seminar.objects.all()
+        ids_to_return = []
+
+        subjects = []
+        for seminar in all_seminars:
+            if seminar.subject not in subjects:
+                ids_to_return.append(seminar.id)
+                subjects.append(seminar.subject)
+
+        return Seminar.objects.filter(id__in=ids_to_return)
+
+    @staticmethod
     def get_open_seminars():
         upcoming_seminars = Seminar.objects.filter(date_and_time__gt=timezone.now())
         ids_of_open_seminars = []

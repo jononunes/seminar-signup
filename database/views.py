@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 def signup_form(request):
     context = {
+        'subject_info': Seminar.get_distinct_subjects(),
         'seminars': Seminar.get_open_seminars(),
         'closed_seminars': Seminar.get_closed_seminars(),
         'merchant_id': settings.PAYFAST_MERCHANT_ID,

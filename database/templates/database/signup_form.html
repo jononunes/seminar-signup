@@ -57,9 +57,21 @@
     <div class="container my-5" style="padding-bottom:80px">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-12">
+                <div class="p-5 mb-4 bg-primary rounded-3">
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold text-info">Prelim Seminars</h1>
+                        <h2>by Nicholas von Buddenbrock</h2>
+                        <p class="col-md-8 text-justify">I am offering seminars for prelim studying! If you would like
+                            to sign up,
+                            please fill in the form below. For each extra seminar you register for, I will give an
+                            additional
+                            10% discount on that seminar's fee.
+                        </p>
+                    </div>
+                </div>
                 <div class="card">
                     <h3 class="card-header">
-                        Sign up for our seminars below
+                        Sign up below
                     </h3>
                     <fieldset class="card-body">
                         <div class="py-2">
@@ -150,7 +162,7 @@
                                 <tr>
                                     <th scope="col"></th>
                                     <th scope="col">Subject</th>
-                                    <th scope="col">Level</th>
+                                    <th scope="col">Content</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Cost</th>
                                     <th scope="col">Spaces remaining</th>
@@ -172,8 +184,8 @@
                                                            for="seminarCheckBox{{ seminar.id }}"></label>
                                                 </div>
                                             </td>
-                                            <td>{{ seminar.get_subject_display }}</td>
-                                            <td>{{ seminar.get_level_display }}</td>
+                                            <td>{{ seminar.get_subject_display }} (<i>{{ seminar.get_level_display }}</i>)</td>
+                                            <td>{{ seminar.course_content }}</td>
                                             <td>{{ seminar.date_and_time }}</td>
                                             <td>R{{ seminar.base_price }}</td>
                                             <td>{{ seminar.get_spaces_remaining }}</td>
@@ -183,8 +195,8 @@
                                 {% for seminar in closed_seminars %}
                                     <tr class="text-muted">
                                         <td></td>
-                                        <td>{{ seminar.get_subject_display }}</td>
-                                        <td>{{ seminar.get_level_display }}</td>
+                                        <td>{{ seminar.get_subject_display }} (<i>{{ seminar.get_level_display }}</i>)</td>
+                                        <td>{{ seminar.course_content }}</td>
                                         <td>{{ seminar.date_and_time }}</td>
                                         <td>R{{ seminar.base_price }}</td>
                                         <td>Full</td>
