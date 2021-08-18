@@ -9,7 +9,7 @@ from database.models import Seminar, Person, Registration, Payment
 from django.views.decorators.csrf import csrf_exempt
 
 
-def signup_form(request):
+def get_homepage_context():
     context = {
         'subject_info': Seminar.get_distinct_subjects(),
         'seminars': Seminar.get_open_seminars(),
@@ -21,6 +21,11 @@ def signup_form(request):
         'cancel_url': settings.PAYFAST_CANCEL_URL,
         'notify_url': settings.PAYFAST_NOTIFY_URL,
     }
+    return context
+
+
+def signup_form(request):
+    context = get_homepage_context()
 
     return render(request, 'database/signup_form.html', context=context)
 
@@ -81,9 +86,11 @@ def register(request):
 
 def success(request):
     messages.success(request, "You have successfully registered! A confirmation email will be sent to you shortly.")
-    return render(request, 'database/signup_form.html')
+    context = get_homepage_context()
+    return render(request, 'database/signup_form.html', context=context)
 
 
 def cancel(request):
     messages.info(request, "Something has gone wrong with the payment, please try again.")
-    return render(request, 'database/signup_form.html')
+    context = get_homepage_context()
+    return render(request, 'database/signup_form.html', context=context)
