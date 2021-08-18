@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Updated cell number field.">
-      <change beforePath="$PROJECT_DIR$/database/static/database/covid_waiver.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Updated covid waiver.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/static/database/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/helpers.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +89,7 @@
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
-      <workItem from="1628609908758" duration="32843000" />
+      <workItem from="1628609908758" duration="35843000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -350,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629216570257</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Updated covid waiver.">
+      <created>1629216880867</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1629216880867</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +388,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added django heroku for database connection." />
     <MESSAGE value="Trying to flip the database thing around." />
     <MESSAGE value="Added a string representation for the seminars." />
     <MESSAGE value="Added a capacity field to the seminar." />
@@ -406,6 +412,7 @@
     <MESSAGE value="Pushing up to test registration." />
     <MESSAGE value="Pushing up changes for registering seminars." />
     <MESSAGE value="Updated cell number field." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated cell number field." />
+    <MESSAGE value="Updated covid waiver." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated covid waiver." />
   </component>
 </project>

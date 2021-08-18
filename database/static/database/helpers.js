@@ -1,3 +1,6 @@
+const discount = 0.1
+const discount_cap = 0.6
+
 function get_ticked_checkboxes() {
     let allCheckboxes = document.querySelectorAll('[id^="seminarCheckBox"]')
     let tickedCheckboxes = []
@@ -20,16 +23,29 @@ function get_total_cost(tickedCheckboxes) {
     return totalCost.toFixed(2)
 }
 
+function get_discounted_cost(tickedCheckboxes, discountPercent) {
+    let discountedCost = 0.0;
+
+    for (let i = 0; i < tickedCheckboxes.length; i++) {
+        let checkboxCost = parseFloat(tickedCheckboxes[i].getAttribute("data-price"))
+        let thisDiscount = discountPercent * i
+
+        if (thisDiscount > discount_cap) thisDiscount = discount_cap;
+
+        discountedCost += checkboxCost * (1 - thisDiscount)
+    }
+
+    return discountedCost.toFixed(2)
+}
+
 function reset_payment_button() {
     const button = document.getElementById('paymentButton')
     const text = document.getElementById('paymentText')
 
     let tickedCheckboxes = get_ticked_checkboxes()
 
-    let has_selected_one_checkbox = tickedCheckboxes.length > 0
-
-    if (has_selected_one_checkbox) {
-        let total_cost = get_total_cost(tickedCheckboxes)
+    if (tickedCheckboxes.length > 0) {
+        let total_cost = get_discounted_cost(tickedCheckboxes, discount)
 
         button.disabled = false;
         text.textContent = "Total cost: R" + total_cost
@@ -60,7 +76,7 @@ function generate_payment_info() {
 
     // Calculate the total amount
     let tickedCheckboxes = get_ticked_checkboxes()
-    let total_cost = get_total_cost(tickedCheckboxes)
+    let total_cost = get_discounted_cost(tickedCheckboxes, discount)
 
     // Payment ID
     let payment_id = uuidv4()
