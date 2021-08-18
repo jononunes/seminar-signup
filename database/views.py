@@ -4,7 +4,7 @@ from django.utils import timezone
 
 from django.shortcuts import render, HttpResponse
 
-from database.models import Seminar, Person, Registration
+from database.models import Seminar, Person, Registration, Payment
 
 from django.views.decorators.csrf import csrf_exempt
 
@@ -64,6 +64,17 @@ def register(request):
         for ticked_seminar_id in ticked_seminar_ids:
             seminar = Seminar.objects.filter(id=ticked_seminar_id).first()
             registration.registered_seminars.add(seminar)
+
+        payment = Payment(m_payment_id=request.POST['m_payment_id'],
+                          pf_payment_id=int(request.POST['pf_payment_id']),
+                          payment_status=request.POST['payment_status'],
+                          item_name=request.POST['item_name'],
+                          amount_gross=float(request.POST['amount_gross']),
+                          amount_fee=float(request.POST['amount_fee']),
+                          amount_net=float(request.POST['amount_net']),
+                          registration=registration)
+
+        payment.save()
 
     return HttpResponse(status=200)
 

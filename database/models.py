@@ -103,8 +103,14 @@ class Registration(models.Model):
 
 
 class Payment(models.Model):
-    amount_paid = models.DecimalField(max_digits=8, decimal_places=2)
+    m_payment_id = models.CharField(max_length=100)
+    pf_payment_id = models.IntegerField()
+    payment_status = models.CharField(max_length=100)
+    item_name = models.CharField(max_length=100)
+    amount_gross = models.DecimalField(max_digits=10, decimal_places=2)
+    amount_fee = models.DecimalField(max_digits=10, decimal_places=2)
+    amount_net = models.DecimalField(max_digits=10, decimal_places=2)
     registration = models.ForeignKey(Registration, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"R{self.amount_paid} - {self.registration.parent_guardian} / {self.registration.child}"
+        return f"R{self.amount_gross} - {self.registration.parent_guardian} / {self.registration.child}"
