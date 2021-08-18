@@ -152,11 +152,11 @@
 
                         <div class="py-2">
                             <h5 class="card-header">Courses</h5>
-                            <h6 class="my-2 text-info">Note on the course levels:</h6>
+                            <!--<h6 class="my-2 text-info">Note on the course levels:</h6>
                             <p><i>Standard level</i> courses are teaching focussed for students who are not completely
                                 comfortable with the content.</p>
                             <p><i>Advanced level</i> courses are practice focussed for students who are comfortable with
-                                the content and would like more practice.</p>
+                                the content and would like more practice.</p> -->
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
@@ -184,7 +184,7 @@
                                                            for="seminarCheckBox{{ seminar.id }}"></label>
                                                 </div>
                                             </td>
-                                            <td>{{ seminar.get_subject_display }} (<i>{{ seminar.get_level_display }}</i>)</td>
+                                            <td>{{ seminar.get_subject_display }}</td>
                                             <td>{{ seminar.course_content }}</td>
                                             <td>{{ seminar.date_and_time }}</td>
                                             <td>R{{ seminar.base_price }}</td>
@@ -195,7 +195,7 @@
                                 {% for seminar in closed_seminars %}
                                     <tr class="text-muted">
                                         <td></td>
-                                        <td>{{ seminar.get_subject_display }} (<i>{{ seminar.get_level_display }}</i>)</td>
+                                        <td>{{ seminar.get_subject_display }}</td>
                                         <td>{{ seminar.course_content }}</td>
                                         <td>{{ seminar.date_and_time }}</td>
                                         <td>R{{ seminar.base_price }}</td>

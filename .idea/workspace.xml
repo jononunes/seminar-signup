@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Trying to put debug on false.">
-      <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Changed non default fields to take blank.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,7 @@
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
-      <workItem from="1628609908758" duration="42306000" />
+      <workItem from="1628609908758" duration="42971000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -412,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629297156329</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Changed non default fields to take blank.">
+      <created>1629297700396</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1629297700396</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +451,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated template with loading seminars and covid waiver link." />
     <MESSAGE value="Added base logic for registering a slot." />
     <MESSAGE value="Added required fields." />
     <MESSAGE value="Added a time registered field." />
@@ -468,6 +475,7 @@
     <MESSAGE value="Removing equality thing for Person model." />
     <MESSAGE value="Changed the success and cancel views to have the right context." />
     <MESSAGE value="Trying to put debug on false." />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to put debug on false." />
+    <MESSAGE value="Changed non default fields to take blank." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed non default fields to take blank." />
   </component>
 </project>
