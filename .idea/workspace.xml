@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added a jumbotron up front.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Trying to add a payment thingy.">
       <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,7 @@
       <updated>1628499045212</updated>
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
-      <workItem from="1628609908758" duration="40899000" />
+      <workItem from="1628609908758" duration="41166000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>
@@ -379,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629295665662</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Trying to add a payment thingy.">
+      <created>1629296520051</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1629296520051</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +415,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added a field to track registered seminars." />
     <MESSAGE value="Added workspace to gitignore" />
     <MESSAGE value="Updated models to include string representations." />
     <MESSAGE value="Added additional info to registration." />
@@ -435,6 +439,7 @@
     <MESSAGE value="Added discount logic." />
     <MESSAGE value="Neatened up the form." />
     <MESSAGE value="Added a jumbotron up front." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a jumbotron up front." />
+    <MESSAGE value="Trying to add a payment thingy." />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to add a payment thingy." />
   </component>
 </project>
