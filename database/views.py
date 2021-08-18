@@ -11,7 +11,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 def signup_form(request):
     context = {
-        'seminars': sorted(Seminar.objects.filter(date_and_time__gt=timezone.now()), key=lambda x: x.date_and_time),
+        'seminars': Seminar.get_open_seminars(),
+        'closed_seminars': Seminar.get_closed_seminars(),
         'merchant_id': settings.PAYFAST_MERCHANT_ID,
         'merchant_key': settings.PAYFAST_MERCHANT_KEY,
         'payfast_url': settings.PAYFAST_URL,

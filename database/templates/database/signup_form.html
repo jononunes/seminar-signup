@@ -56,7 +56,7 @@
 
     <div class="container my-5" style="padding-bottom:80px">
         <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-8 col-md-12">
                 <div class="card">
                     <h3 class="card-header">
                         Sign up for our seminars below
@@ -145,23 +145,53 @@
                                 comfortable with the content.</p>
                             <p><i>Advanced level</i> courses are practice focussed for students who are comfortable with
                                 the content and would like more practice.</p>
-                            <fieldset class="form-group py-2">
-                                {% for seminar in seminars %}
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                               id="seminarCheckBox{{ seminar.id }}"
-                                               name="seminarCheckBox{{ seminar.id }}"
-                                               onclick="reset_payment_button()"
-                                               data-price="{{ seminar.base_price }}"
-                                               data-id="{{ seminar.id }}"
-                                        >
-                                        <label class="form-check-label" for="seminarCheckBox{{ seminar.id }}">
-                                            {{ seminar.get_subject_display }} ({{ seminar.get_level_display }} level)
-                                            - {{ seminar.date_and_time }} [R{{ seminar.base_price }}]
-                                        </label>
-                                    </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Level</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Cost</th>
+                                    <th scope="col">Spaces remaining</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <fieldset class="form-group py-2">
+                                    {% for seminar in seminars %}
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="seminarCheckBox{{ seminar.id }}"
+                                                           name="seminarCheckBox{{ seminar.id }}"
+                                                           onclick="reset_payment_button()"
+                                                           data-price="{{ seminar.base_price }}"
+                                                           data-id="{{ seminar.id }}">
+                                                    <label class="form-check-label"
+                                                           for="seminarCheckBox{{ seminar.id }}"></label>
+                                                </div>
+                                            </td>
+                                            <td>{{ seminar.get_subject_display }}</td>
+                                            <td>{{ seminar.get_level_display }}</td>
+                                            <td>{{ seminar.date_and_time }}</td>
+                                            <td>R{{ seminar.base_price }}</td>
+                                            <td>{{ seminar.get_spaces_remaining }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </fieldset>
+                                {% for seminar in closed_seminars %}
+                                    <tr class="text-muted">
+                                        <td></td>
+                                        <td>{{ seminar.get_subject_display }}</td>
+                                        <td>{{ seminar.get_level_display }}</td>
+                                        <td>{{ seminar.date_and_time }}</td>
+                                        <td>R{{ seminar.base_price }}</td>
+                                        <td>Full</td>
+                                    </tr>
                                 {% endfor %}
-                            </fieldset>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="form-group py-2">
                             <label for="additionalInfoTextArea" class="form-label mt-4">Anything else we should
@@ -181,7 +211,9 @@
                 <h3 class="text-center" id="paymentText"></h3>
             </div>
             <div class="d-flex justify-content-center">
-                <button disabled type="submit" value="OK" class="btn btn-secondary" id="paymentButton" onclick="generate_payment_info()">PAY NOW</button>
+                <button disabled type="submit" value="OK" class="btn btn-secondary" id="paymentButton"
+                        onclick="generate_payment_info()">PAY NOW
+                </button>
             </div>
         </div>
     </footer>

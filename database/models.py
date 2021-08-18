@@ -41,6 +41,40 @@ class Seminar(models.Model):
     def __str__(self):
         return f"{self.subject} - {self.level} [{self.date_and_time}]"
 
+    def get_all_registrations(self):
+        return self.registration_set.all()
+
+    def get_spaces_remaining(self):
+        number_of_registrations = len(self.get_all_registrations())
+        spaces_remaining = self.capacity - number_of_registrations
+        return spaces_remaining
+
+    def is_full(self):
+        return self.get_spaces_remaining() <= 0
+
+    @staticmethod
+    def get_open_seminars():
+        upcoming_seminars = Seminar.objects.filter(date_and_time__gt=timezone.now())
+        ids_of_open_seminars = []
+        for seminar in upcoming_seminars:
+            if not seminar.is_full():
+                ids_of_open_seminars.append(seminar.id)
+
+        return Seminar.objects.filter(id__in=ids_of_open_seminars)
+
+    @staticmethod
+    def get_closed_seminars():
+        upcoming_seminars = Seminar.objects.filter(date_and_time__gt=timezone.now())
+        ids_of_closed_seminars = []
+        for seminar in upcoming_seminars:
+            if seminar.is_full():
+                ids_of_closed_seminars.append(seminar.id)
+
+        return Seminar.objects.filter(id__in=ids_of_closed_seminars)
+
+    class Meta:
+        ordering = ['subject', 'level']
+
 
 class Registration(models.Model):
     parent_guardian = models.OneToOneField(Person, models.CASCADE, related_name="parent_guardian")
