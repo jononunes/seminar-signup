@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Removed the description of the course level.">
+      <change afterPath="$PROJECT_DIR$/database/migrations/0009_auto_20210819_1042.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seminar_signup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +93,7 @@
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
       <workItem from="1628609908758" duration="43515000" />
+      <workItem from="1629362309918" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="Added initial Django files.">
       <created>1628501437306</created>

@@ -108,3 +108,12 @@ class Payment(models.Model):
 
     def __str__(self):
         return f"R{self.amount_gross} - {self.registration.parent_guardian} / {self.registration.child}"
+
+
+class NotificationError(models.Model):
+    error_description = models.TextField(blank=True)
+    notification_post_info = models.TextField(blank=True)
+    time_registered = models.DateTimeField(auto_now_add=True, blank=True, null=False)
+
+    def __str__(self):
+        return str(self.time_registered)
