@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Removed the description of the course level.">
-      <change afterPath="$PROJECT_DIR$/database/migrations/0009_auto_20210819_1042.py" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Changed seminars to order by time.">
+      <change afterPath="$PROJECT_DIR$/database/templates/database/seminar_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/templates/database/seminars.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seminar_signup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seminar_signup/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -44,6 +47,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -93,14 +97,7 @@
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
       <workItem from="1628609908758" duration="43515000" />
-      <workItem from="1629362309918" duration="620000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added initial Django files.">
-      <created>1628501437306</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1628501437306</updated>
+      <workItem from="1629362309918" duration="5207000" />
     </task>
     <task id="LOCAL-00002" summary="Added PyCharm files.">
       <created>1628501995394</created>
@@ -431,7 +428,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629299702462</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Added error fallback.">
+      <created>1629362971214</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1629362971214</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Changed seminars to order by time.">
+      <created>1629383853415</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1629383853415</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,8 +473,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added required fields." />
-    <MESSAGE value="Added a time registered field." />
     <MESSAGE value="Edited the time registered field." />
     <MESSAGE value="Added a bottom border on the template." />
     <MESSAGE value="Added javascript to calculate price." />
@@ -487,6 +496,8 @@
     <MESSAGE value="Trying to put debug on false." />
     <MESSAGE value="Changed non default fields to take blank." />
     <MESSAGE value="Removed the description of the course level." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed the description of the course level." />
+    <MESSAGE value="Added error fallback." />
+    <MESSAGE value="Changed seminars to order by time." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed seminars to order by time." />
   </component>
 </project>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List of seminars</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="https://bootswatch.com/5/slate/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5" style="padding-bottom:80px">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-12">
+            <div class="card">
+                <h3 class="card-header">
+                    Seminar information
+                </h3>
+                <div class="container px-2">
+                    <div class="py-3">
+                        <p><b>Subject</b>: {{ this_seminar.get_subject_display }}</p>
+                        <p><b>Date and time</b>: {{ this_seminar.date_and_time }}</p>
+                        <p><b>Base price</b>: R{{ this_seminar.base_price }}</p>
+                        <p><b>Course content</b>: {{ this_seminar.course_content }}</p>
+                        <p><b>Total capacity</b>: {{ this_seminar.capacity }}</p>
+                        <p><b>Number of registrations</b>: {{ this_seminar.registration_set.count }}</p>
+                        <p><b>Students registered:</b></p>
+                        <table class="table">
+                            <thead>
+                            <td>Name</td>
+                            <td>Number</td>
+                            <td>Email</td>
+                            <td>Parent's details</td>
+                            </thead>
+                            <tbody>
+                            {% for registration in registrations %}
+                                <tr>
+                                <td>{{ registration.child.first_name }} {{ registration.child.last_name }}</td>
+                                <td>{{ registration.child.cellphone_number }}</td>
+                                    <td><a href="mailto:{{ registration.child.email_address }}">{{ registration.child.email_address }}</a></td>
+                                <td>{{ registration.parent_guardian.first_name }} {{ registration.parent_guardian.last_name }} - {{ registration.parent_guardian.cellphone_number }} -
+                                    <a href="mailto:{{ registration.parent_guardian.email_address }}">{{ registration.parent_guardian.email_address }}</a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -60,8 +60,12 @@ class Seminar(models.Model):
         return Seminar.objects.filter(id__in=ids_to_return)
 
     @staticmethod
+    def get_upcoming_seminars():
+        return Seminar.objects.filter(date_and_time__gt=timezone.now())
+
+    @staticmethod
     def get_open_seminars():
-        upcoming_seminars = Seminar.objects.filter(date_and_time__gt=timezone.now())
+        upcoming_seminars = Seminar.get_upcoming_seminars()
         ids_of_open_seminars = []
         for seminar in upcoming_seminars:
             if not seminar.is_full():
@@ -71,7 +75,7 @@ class Seminar(models.Model):
 
     @staticmethod
     def get_closed_seminars():
-        upcoming_seminars = Seminar.objects.filter(date_and_time__gt=timezone.now())
+        upcoming_seminars = Seminar.get_upcoming_seminars()
         ids_of_closed_seminars = []
         for seminar in upcoming_seminars:
             if seminar.is_full():

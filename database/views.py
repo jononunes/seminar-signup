@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
 from django.shortcuts import render, HttpResponse
@@ -104,3 +105,16 @@ def cancel(request):
     messages.info(request, "Something has gone wrong with the payment, please try again.")
     context = get_homepage_context()
     return render(request, 'database/signup_form.html', context=context)
+
+
+@login_required
+def seminars(request):
+    context = {'all_upcoming_seminars': Seminar.get_upcoming_seminars()}
+    return render(request, "database/seminars.html", context=context)
+
+
+@login_required
+def seminar_detail(request, pk):
+    this_seminar = Seminar.objects.filter(id=pk).first()
+    context = {'this_seminar': this_seminar, 'registrations': this_seminar.get_all_registrations()}
+    return render(request, "database/seminar_detail.html", context=context)
