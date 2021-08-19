@@ -80,7 +80,7 @@ class Seminar(models.Model):
         return Seminar.objects.filter(id__in=ids_of_closed_seminars)
 
     class Meta:
-        ordering = ['subject', 'level']
+        ordering = ['date_and_time']
 
 
 class Registration(models.Model):
