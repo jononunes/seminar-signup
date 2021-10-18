@@ -27,6 +27,12 @@ class Seminar(models.Model):
     ]
     level = models.CharField(max_length=15, choices=level_choices)
 
+    grade_choices = [
+        ("GRADE11", "Grade 11"),
+        ("GRADE12", "Grade 12")
+    ]
+    grade = models.CharField(max_length=10, choices=grade_choices)
+
     date_and_time = models.DateTimeField()
     base_price = models.DecimalField(max_digits=8, decimal_places=2)
     course_content = models.TextField()
