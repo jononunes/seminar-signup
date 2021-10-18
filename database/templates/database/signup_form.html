@@ -2,233 +2,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Sign up for seminars</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <link rel="stylesheet" href="{% static 'database/css/style.css' %}"/>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Karla&display=swap"
+            rel="stylesheet"
+    />
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"
+    ></script>
     <script src="{% static 'database/helpers.js' %}"></script>
-    <link href="https://bootswatch.com/5/slate/bootstrap.min.css" rel="stylesheet">
+    <link
+            href="https://bootswatch.com/5/slate/bootstrap.min.css"
+            rel="stylesheet"
+    />
 </head>
 <body>
-
-{% if messages %}
-    {% for message in messages %}
-        <div class="text-center alert alert-dismissible alert-{{ message.tags }}">
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            <h4 class="alert-heading">{% if message.level == 40 %}Error{% elif message.level == 25 %}
-                Success{% elif message.level == 20 %}Info{% endif %}</h4>
-            <p class="mb-0">{{ message }}</p>
-        </div>
-    {% endfor %}
-{% endif %}
+{% if messages %} {% for message in messages %}
+    <div class="text-center alert alert-dismissible alert-{{ message.tags }}">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <h4 class="alert-heading">
+            {% if message.level == 40 %}Error{% elif message.level == 25 %}
+                Success{% elif message.level == 20 %}Info{% endif %}
+        </h4>
+        <p class="mb-0">{{ message }}</p>
+    </div>
+{% endfor %} {% endif %}
 
 <form action="{{ payfast_url }}" method="post">
     {% csrf_token %}
 
     <!-- PayFast stuff -->
-    <input type="hidden" name="merchant_id" value="{{ merchant_id }}">
-    <input type="hidden" name="merchant_key" value="{{ merchant_key }}">
-    <input type="hidden" name="amount" value="">
-    <input type="hidden" name="item_name" value="">
-    <input type="hidden" name="return_url" value="{{ return_url }}">
-    <input type="hidden" name="cancel_url" value="{{ cancel_url }}">
-    <input type="hidden" name="notify_url" value="{{ notify_url }}">
-    <input type="hidden" name="m_payment_id" value="">
-    <input type="hidden" name="item_description" value="">
-    <input type="hidden" name="email_confirmation" value="1">
-    <input type="hidden" name="confirmation_address" value="nicklasvbud@gmail.com">
+    <input type="hidden" name="merchant_id" value="{{ merchant_id }}"/>
+    <input type="hidden" name="merchant_key" value="{{ merchant_key }}"/>
+    <input type="hidden" name="amount" value=""/>
+    <input type="hidden" name="item_name" value=""/>
+    <input type="hidden" name="return_url" value="{{ return_url }}"/>
+    <input type="hidden" name="cancel_url" value="{{ cancel_url }}"/>
+    <input type="hidden" name="notify_url" value="{{ notify_url }}"/>
+    <input type="hidden" name="m_payment_id" value=""/>
+    <input type="hidden" name="item_description" value=""/>
+    <input type="hidden" name="email_confirmation" value="1"/>
+    <input
+            type="hidden"
+            name="confirmation_address"
+            value="nicklasvbud@gmail.com"
+    />
     <!-- For the students details [first,last,email,cell] -->
-    <input type="hidden" name="custom_str1" value="">
+    <input type="hidden" name="custom_str1" value=""/>
     <!-- For the covid waiver acceptance [bool,bool] -->
-    <input type="hidden" name="custom_str2" value="">
+    <input type="hidden" name="custom_str2" value=""/>
     <!-- For the chosen seminars [id,id,id,...] -->
-    <input type="hidden" name="custom_str3" value="">
+    <input type="hidden" name="custom_str3" value=""/>
     <!-- For the additional info -->
-    <input type="hidden" name="custom_str4" value="">
+    <input type="hidden" name="custom_str4" value=""/>
     <!-- For the parent cell number, since it is lost in the notification -->
-    <input type="hidden" name="custom_str5" value="">
-
-
-    <div class="container my-5" style="padding-bottom:80px">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-12">
-                <div class="p-5 mb-4 bg-primary rounded-3">
-                    <div class="container-fluid py-5">
-                        <h1 class="display-5 fw-bold text-info">Prelim Seminars</h1>
-                        <h2>by Nicholas von Buddenbrock</h2>
-                        <p class="col-md-8 text-justify">I am offering seminars for prelim studying! If you would like
-                            to sign up,
-                            please fill in the form below. For each extra seminar you register for, I will give an
-                            additional
-                            10% discount on that seminar's fee.
-                        </p>
+    <input type="hidden" name="custom_str5" value=""/>
+    <div class="bg-element">
+        <div class="container my-5" style="padding-bottom: 80px">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-12">
+                    <div class="p-5 mb-4 bg-trans">
+                        <div class="container-fluid py-5">
+                            <h1 class="display-5 fw-bold">PRELIM SEMINARS</h1>
+                            <h2>by Nicholas von Buddenbrock</h2>
+                            <p class="col-md-8 text-justify">
+                                I am offering seminars for prelim studying! If you would like
+                                to sign up, please fill in the form below. For each extra
+                                seminar you register for, I will give an additional 10%
+                                discount on that seminar's fee.
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <h3 class="card-header">
-                        Sign up below
-                    </h3>
-                    <fieldset class="card-body">
-                        <div class="py-2">
-                            <h5 class="card-header">Parent/guardian's details</h5>
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label for="name_first" class="form-label my-2">First name</label>
-                                    <input type="text" class="form-control text-light" id="name_first"
-                                           name="name_first"
-                                           placeholder="Parent/guardian's first name" required>
+                    <div class="card">
+                        <h3 class="card-header">Sign Up Below</h3>
+                        <fieldset class="card-body">
+                            <div class="py-2">
+                                <h5 class="card-header">Parent/Guardian's Details</h5>
+                                <div class="row">
+                                    <div class="form__group col">
+                                        <input
+                                                type="text"
+                                                class="form__input"
+                                                id="name_first"
+                                                name="name_first"
+                                                placeholder=" "
+                                                required
+                                        />
+                                        <label for="name_first" class="form__label"
+                                        >First Name</label
+                                        >
+                                    </div>
+                                    <div class="form__group col">
+                                        <input
+                                                type="text"
+                                                class="form__input"
+                                                id="name_last"
+                                                name="name_last"
+                                                placeholder=" "
+                                                required
+                                        />
+                                        <label for="name_last" class="form__label"
+                                        >Last Name</label
+                                        >
+                                    </div>
                                 </div>
-                                <div class="form-group col">
-                                    <label for="name_last" class="form-label my-2">Last name</label>
-                                    <input type="text" class="form-control text-light" id="name_last"
-                                           name="name_last"
-                                           placeholder="Parent/guardian's last name" required>
+                                <div class="row">
+                                    <div class="form__group col">
+                                        <input
+                                                type="email"
+                                                class="form__input"
+                                                id="email_address"
+                                                name="email_address"
+                                                placeholder=" "
+                                                required
+                                        />
+                                        <label for="email_address" class="form__label"
+                                        >Email Address</label
+                                        >
+                                    </div>
+                                    <div class="form__group col">
+                                        <input
+                                                type="tel"
+                                                class="form__input"
+                                                id="cell_number"
+                                                name="cell_number"
+                                                placeholder=" "
+                                        />
+                                        <label for="cell_number" class="form__label"
+                                        >Contact Number</label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="check checkbox-rotate">
+                                    <label class="input-check check-lightBlue">
+                                        <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                value=""
+                                                id="parentCovidWaiver"
+                                                name="parentCovidWaiver"
+                                                required
+                                        />
+                                        <span class="chk"></span>
+                                    </label>
+                                    <label class="form-check-label" for="parentCovidWaiver">
+                                        Do you (the parent/guardian) accept the
+                                        <a
+                                                href="{% static 'database/covid_waiver.pdf' %}"
+                                                target="_blank"
+                                        >Covid waiver</a
+                                        >?
+                                    </label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email_address" class="form-label my-2">Email address</label>
-                                <input type="email" class="form-control text-light" id="email_address"
-                                       name="email_address"
-                                       placeholder="Parent/guardian's email address" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="cell_number" class="form-label my-2">Contact number</label>
-                                <input type="tel" class="form-control text-light" id="cell_number"
-                                       name="cell_number"
-                                       placeholder="Parent/guardian's contact number">
-                            </div>
-                            <div class="form-check my-2">
-                                <input class="form-check-input" type="checkbox" value="" id="parentCovidWaiver"
-                                       name="parentCovidWaiver" required>
-                                <label class="form-check-label" for="parentCovidWaiver">
-                                    Do you (the parent/guardian) accept the <a
-                                        href="{% static 'database/covid_waiver.pdf' %}" target="_blank">Covid waiver</a>?
-                                </label>
-                            </div>
-                        </div>
 
-                        <div class="py-2">
-                            <h5 class="card-header">Student's details</h5>
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label for="studentFirstName" class="form-label my-2">First name</label>
-                                    <input type="text" class="form-control text-light" id="studentFirstName"
-                                           name="studentFirstName"
-                                           placeholder="Student's first name" required>
+                            <div class="py-2">
+                                <h5 class="card-header">Student's Details</h5>
+                                <div class="row">
+                                    <div class="form__group col">
+                                        <input
+                                                type="text"
+                                                class="form__input"
+                                                id="studentFirstName"
+                                                name="studentFirstName"
+                                                placeholder=" "
+                                                required
+                                        />
+                                        <label for="studentFirstName" class="form__label"
+                                        >First Name</label
+                                        >
+                                    </div>
+                                    <div class="form__group col">
+                                        <input
+                                                type="text"
+                                                class="form__input"
+                                                id="studentLastName"
+                                                name="studentLastName"
+                                                placeholder=" "
+                                                required
+                                        />
+                                        <label for="studentLastName" class="form__label"
+                                        >Last Name</label
+                                        >
+                                    </div>
                                 </div>
-                                <div class="form-group col">
-                                    <label for="studentLastName" class="form-label my-2">Last name</label>
-                                    <input type="text" class="form-control text-light" id="studentLastName"
-                                           name="studentLastName"
-                                           placeholder="Student's last name" required>
+                                <div class="row">
+                                    <div class="form__group col">
+                                        <input
+                                                type="email"
+                                                class="form__input"
+                                                id="studentEmail"
+                                                name="studentEmail"
+                                                placeholder=" "
+                                        />
+                                        <label for="studentEmail" class="form__label"
+                                        >Email Address</label
+                                        >
+                                    </div>
+                                    <div class="form__group col">
+                                        <input
+                                                type="tel"
+                                                class="form__input"
+                                                id="studentPhoneNumber"
+                                                name="studentPhoneNumber"
+                                                placeholder=" "
+                                        />
+                                        <label for="studentPhoneNumber" class="form__label"
+                                        >Contact Number</label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="check checkbox-rotate">
+                                    <label class="input-check check-lightBlue">
+                                        <input
+                                                class="form-check-input"
+                                                type="checkbox"
+                                                value=""
+                                                id="studentCovidWaiver"
+                                                name="studentCovidWaiver"
+                                                required
+                                        />
+                                        <span class="chk"></span>
+                                    </label>
+                                    <label class="form-check-label" for="studentCovidWaiver">
+                                        Do you (the student) accept the
+                                        <a
+                                                href="{% static 'database/covid_waiver.pdf' %}"
+                                                target="_blank"
+                                        >Covid waiver</a
+                                        >?
+                                    </label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="studentEmail" class="form-label my-2">Email address</label>
-                                <input type="email" class="form-control text-light" id="studentEmail"
-                                       name="studentEmail"
-                                       placeholder="Student's email address">
-                            </div>
-                            <div class="form-group">
-                                <label for="studentPhoneNumber" class="form-label my-2">Contact number</label>
-                                <input type="tel" class="form-control text-light" id="studentPhoneNumber"
-                                       name="studentPhoneNumber"
-                                       placeholder="Student's contact number">
-                            </div>
-                            <div class="form-check my-2">
-                                <input class="form-check-input" type="checkbox" value="" id="studentCovidWaiver"
-                                       name="studentCovidWaiver" required>
-                                <label class="form-check-label" for="studentCovidWaiver">
-                                    Do you (the student) accept the <a href="{% static 'database/covid_waiver.pdf' %}"
-                                                                       target="_blank">Covid waiver</a>?
-                                </label>
-                            </div>
-                        </div>
 
-                        <div class="py-2">
-                            <h5 class="card-header">Courses</h5>
-                            <!--<h6 class="my-2 text-info">Note on the course levels:</h6>
-                            <p><i>Standard level</i> courses are teaching focussed for students who are not completely
-                                comfortable with the content.</p>
-                            <p><i>Advanced level</i> courses are practice focussed for students who are comfortable with
-                                the content and would like more practice.</p> -->
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Subject</th>
-                                    <th scope="col">Content</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Cost</th>
-                                    <th scope="col">Spaces remaining</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <fieldset class="form-group py-2">
-                                    {% for seminar in seminars %}
-                                        <tr>
-                                            <td>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value=""
-                                                           id="seminarCheckBox{{ seminar.id }}"
-                                                           name="seminarCheckBox{{ seminar.id }}"
-                                                           onclick="reset_payment_button()"
-                                                           data-price="{{ seminar.base_price }}"
-                                                           data-id="{{ seminar.id }}">
-                                                    <label class="form-check-label"
-                                                           for="seminarCheckBox{{ seminar.id }}"></label>
-                                                </div>
-                                            </td>
+                            <div class="py-2">
+                                <h5 class="card-header">Courses</h5>
+                                <!--<h6 class="my-2 text-info">Note on the course levels:</h6>
+                                          <p><i>Standard level</i> courses are teaching focussed for students who are not completely
+                                              comfortable with the content.</p>
+                                          <p><i>Advanced level</i> courses are practice focussed for students who are comfortable with
+                                              the content and would like more practice.</p> -->
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Subject</th>
+                                        <th scope="col">Content</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Cost</th>
+                                        <th scope="col">Spaces remaining</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <fieldset class="form-group py-2">
+                                        {% for seminar in seminars %}
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input
+                                                                class="form-check-input"
+                                                                type="checkbox"
+                                                                value=""
+                                                                id="seminarCheckBox{{ seminar.id }}"
+                                                                name="seminarCheckBox{{ seminar.id }}"
+                                                                onclick="reset_payment_button()"
+                                                                data-price="{{ seminar.base_price }}"
+                                                                data-id="{{ seminar.id }}"
+                                                        />
+                                                        <label
+                                                                class="form-check-label"
+                                                                for="seminarCheckBox{{ seminar.id }}"
+                                                        ></label>
+                                                    </div>
+                                                </td>
+                                                <td>{{ seminar.get_subject_display }}</td>
+                                                <td>{{ seminar.course_content }}</td>
+                                                <td>
+                                                    {{ seminar.date_and_time|date:"D, d M" }}
+                                                    - {{ seminar.date_and_time|time:"H:i" }}
+                                                </td>
+                                                <td>R{{ seminar.base_price }}</td>
+                                                <td>{{ seminar.get_spaces_remaining }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </fieldset>
+                                    {% for seminar in closed_seminars %}
+                                        <tr class="text-muted">
+                                            <td></td>
                                             <td>{{ seminar.get_subject_display }}</td>
                                             <td>{{ seminar.course_content }}</td>
-                                            <td>{{ seminar.date_and_time|date:"D, d M" }} - {{ seminar.date_and_time|time:"H:i" }}</td>
+                                            <td>
+                                                {{ seminar.date_and_time|date:"D, d M" }}
+                                                - {{ seminar.date_and_time|time:"H:i" }}
+                                            </td>
                                             <td>R{{ seminar.base_price }}</td>
-                                            <td>{{ seminar.get_spaces_remaining }}</td>
+                                            <td>Full</td>
                                         </tr>
                                     {% endfor %}
-                                </fieldset>
-                                {% for seminar in closed_seminars %}
-                                    <tr class="text-muted">
-                                        <td></td>
-                                        <td>{{ seminar.get_subject_display }}</td>
-                                        <td>{{ seminar.course_content }}</td>
-                                        <td>{{ seminar.date_and_time|date:"D, d M" }} - {{ seminar.date_and_time|time:"H:i" }}</td>
-                                        <td>R{{ seminar.base_price }}</td>
-                                        <td>Full</td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="additionalInfoTextArea" class="form-label mt-4">Anything else we should
-                                know?</label>
-                            <textarea class="form-control text-light" id="additionalInfoTextArea"
-                                      name="additionalInfoTextArea" rows="3" maxlength="255"
-                                      placeholder="Additional comments..."></textarea>
-                        </div>
-                    </fieldset>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="form-group py-2">
+                                <label for="additionalInfoTextArea" class="form-label mt-4"
+                                >Anything else we should know?</label
+                                >
+                                <textarea
+                                        class="form-control text-light"
+                                        id="additionalInfoTextArea"
+                                        name="additionalInfoTextArea"
+                                        rows="3"
+                                        maxlength="255"
+                                        placeholder="Additional comments..."
+                                ></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
                 </div>
             </div>
         </div>
+        <footer class="footer fixed-bottom mt-5 py-3 bg-primary">
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <h3 class="text-center" id="paymentText"></h3>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button
+                            type="submit"
+                            value="OK"
+                            class="btn-grad"
+                            id="paymentButton"
+                            onclick="generate_payment_info()"
+                            disabled
+                    >
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </footer>
     </div>
-    <footer class="footer fixed-bottom mt-5 py-3 bg-primary">
-        <div class="container">
-            <div class="d-flex justify-content-center">
-                <h3 class="text-center" id="paymentText"></h3>
-            </div>
-            <div class="d-flex justify-content-center">
-                <button disabled type="submit" value="OK" class="btn btn-secondary" id="paymentButton"
-                        onclick="generate_payment_info()">PAY NOW
-                </button>
-            </div>
-        </div>
-    </footer>
 </form>
 </body>
 </html>

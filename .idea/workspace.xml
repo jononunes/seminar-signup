@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Changed seminars to order by time.">
-      <change afterPath="$PROJECT_DIR$/database/templates/database/seminar_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/templates/database/seminars.html" afterDir="false" />
+    <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added a package model.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/templates/css/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/css/bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/templates/css/bg2.png" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/css/bg2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/templates/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/templates/hex.png" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/hex.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seminar_signup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seminar_signup/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -58,6 +63,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\StefanvonBuddenbrock\PycharmProjects\seminar_signup\database\templates\database" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\StefanvonBuddenbrock\PycharmProjects\seminar_signup\database\static\database" />
     </key>
   </component>
   <component name="RunManager">
@@ -97,35 +105,10 @@
       <workItem from="1628499099114" duration="41000" />
       <workItem from="1628499165743" duration="10439000" />
       <workItem from="1628609908758" duration="43515000" />
-      <workItem from="1629362309918" duration="5207000" />
-    </task>
-    <task id="LOCAL-00002" summary="Added PyCharm files.">
-      <created>1628501995394</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1628501995394</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added basic git ignore file.">
-      <created>1628502008647</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1628502008647</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added the first app and models.">
-      <created>1628502053916</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1628502053917</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Updated models.">
-      <created>1628503941085</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1628503941085</updated>
+      <workItem from="1629362309918" duration="6159000" />
+      <workItem from="1629456579000" duration="761000" />
+      <workItem from="1629735166218" duration="102000" />
+      <workItem from="1634581858014" duration="1771000" />
     </task>
     <task id="LOCAL-00006" summary="Updated PyCharm stuff.">
       <created>1628510137309</created>
@@ -442,7 +425,35 @@
       <option name="project" value="LOCAL" />
       <updated>1629383853415</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Made a seminar view.">
+      <created>1629386016859</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1629386016859</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Added grade to the Seminar model.">
+      <created>1634582119797</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1634582119799</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Added grade to the Seminar model.">
+      <created>1634582184221</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1634582184221</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Added a package model.">
+      <created>1634582638801</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1634582638801</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,9 +484,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Edited the time registered field." />
-    <MESSAGE value="Added a bottom border on the template." />
-    <MESSAGE value="Added javascript to calculate price." />
     <MESSAGE value="Changed pay button colour." />
     <MESSAGE value="Added dummy link to payfast sandbox." />
     <MESSAGE value="Added basic payfast fields." />
@@ -498,6 +506,9 @@
     <MESSAGE value="Removed the description of the course level." />
     <MESSAGE value="Added error fallback." />
     <MESSAGE value="Changed seminars to order by time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed seminars to order by time." />
+    <MESSAGE value="Made a seminar view." />
+    <MESSAGE value="Added grade to the Seminar model." />
+    <MESSAGE value="Added a package model." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a package model." />
   </component>
 </project>
