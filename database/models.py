@@ -127,3 +127,12 @@ class NotificationError(models.Model):
 
     def __str__(self):
         return str(self.time_registered)
+
+
+class Package(models.Model):
+    name = models.CharField(max_length=40)
+    discount = models.DecimalField(max_digits=5, decimal_places=2)
+    seminars = models.ManyToManyField(Seminar)
+
+    def __str__(self):
+        return self.name
