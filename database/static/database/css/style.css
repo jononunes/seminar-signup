@@ -258,3 +258,49 @@ a:hover {
 .form-group {
   text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+  .p-5 {
+    box-shadow: 10px 10px 20px rgb(0 0 0 / 50%);
+    padding: 1rem !important;
+  }
+
+  .display-5 {
+    font-size: 50px !important;
+    color: #00e7ff !important;
+    text-shadow: 2px 2px 6px black;
+  }
+
+  .col-md-8 {
+    width: 100% !important;
+    font-size: 18px !important;
+    text-shadow: 1px 1px 4px rgb(0 0 0) !important;
+  }
+
+  .form__label {
+    position: absolute;
+    left: 1rem;
+    top: 0.8rem;
+    padding: 0 0.5rem;
+    font-size: 14px;
+    color: white;
+    cursor: text;
+    -webkit-transition: top 200ms ease-in, left 200ms ease-in,
+      font-size 200ms ease-in;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    background-color: #32383e;
+  }
+
+  .check {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 100px;
+    letter-spacing: 0.5px;
+    display: flex;
+  }
+
+  .form-check-label {
+    font-size: medium;
+    padding-left: 25px;
+  }
+}
