@@ -301,8 +301,7 @@
                                                 <td>{{ seminar.get_subject_display }}</td>
                                                 <td>{{ seminar.course_content }}</td>
                                                 <td>
-                                                    {{ seminar.date_and_time|date:"D, d M" }}- {{
-                              seminar.date_and_time|time:"H:i" }}
+                                                    {{ seminar.date_and_time|date:"D, d M" }}- {{ seminar.date_and_time|time:"H:i" }}
                             </td>
                             <td>R{{ seminar.base_price }}</td>
                             <td>{{ seminar.get_spaces_remaining }}</td>
@@ -315,8 +314,7 @@
                           <td>{{ seminar.get_subject_display }}</td>
                           <td>{{ seminar.course_content }}</td>
                           <td>
-                            {{ seminar.date_and_time|date:"D, d M" }} - {{
-                             seminar.date_and_time|time:"H:i" }}
+                            {{ seminar.date_and_time|date:"D, d M" }} - {{ seminar.date_and_time|time:"H:i" }}
                                             </td>
                                             <td>R{{ seminar.base_price }}</td>
                                             <td>Full</td>
