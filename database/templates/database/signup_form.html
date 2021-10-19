@@ -75,13 +75,12 @@
             <div class="col-lg-8 col-md-12">
               <div class="p-5 mb-4 bg-trans">
                 <div class="container-fluid py-5">
-                  <h1 class="display-5 fw-bold">PRELIM SEMINARS</h1>
+                  <h1 class="display-5 fw-bold">FINALS SEMINARS</h1>
                   <h2>by Nicholas von Buddenbrock</h2>
                   <p class="col-md-8 text-justify">
-                    I am offering seminars for prelim studying! If you would
-                    like to sign up, please fill in the form below. For each
-                    extra seminar you register for, I will give an additional
-                    10% discount on that seminar's fee.
+                    I am offering seminars for finals studying! If you would
+                    like to sign up, please fill in the form below. I am offering course
+                                <i>packages</i> which will give you a bit of a discount!
                   </p>
                 </div>
               </div>
@@ -247,51 +246,62 @@
                     </div>
                   </div>
 
-                  <div class="py-2">
-                    <h5 class="card-header">Courses</h5>
-                    <!--<h6 class="my-2 text-info">Note on the course levels:</h6>
-                                          <p><i>Standard level</i> courses are teaching focussed for students who are not completely
-                                              comfortable with the content.</p>
-                                          <p><i>Advanced level</i> courses are practice focussed for students who are comfortable with
-                                              the content and would like more practice.</p> -->
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th scope="col"></th>
-                          <th scope="col">Subject</th>
-                          <th scope="col">Content</th>
-                          <th scope="col">Date</th>
-                          <th scope="col">Cost</th>
-                          <th scope="col">Spaces remaining</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <fieldset class="form-group py-2">
-                          {% for seminar in seminars %}
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="seminarCheckBox{{ seminar.id }}"
-                                  name="seminarCheckBox{{ seminar.id }}"
-                                  onclick="reset_payment_button()"
-                                  data-price="{{ seminar.base_price }}"
-                                  data-id="{{ seminar.id }}"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="seminarCheckBox{{ seminar.id }}"
-                                ></label>
-                              </div>
-                            </td>
-                            <td>{{ seminar.get_subject_display }}</td>
-                            <td>{{ seminar.course_content }}</td>
-                            <td>
-                              {{ seminar.date_and_time|date:"D, d M" }} - {{
-                              seminar.date_and_time|time:"H:i" }}
+                            <div class="py-2">
+                                <h5 class="card-header">Courses</h5>
+                                <!--<h6 class="my-2 text-info">Note on the course levels:</h6> -->
+                                <p>Get an additional discount by choosing a course package! Or if you prefer,
+                                    you can sign up for individual courses.</p>
+                                <ul class="nav nav-tabs nav-fill">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#packagesTab">Packages</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#individualCoursesTab">Individual
+                                            courses</a>
+                                    </li>
+                                </ul>
+                                <div id="tabContent" class="tab-content">
+                                    <div class="tab-pane fade active show" id="packagesTab">
+
+                                    </div>
+                                    <div class="tab-pane fade" id="individualCoursesTab">
+                                        <table class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Subject</th>
+                                        <th scope="col">Content</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Cost</th>
+                                        <th scope="col">Spaces remaining</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <fieldset class="form-group py-2">
+                                        {% for seminar in seminars %}
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input
+                                                                class="form-check-input"
+                                                                type="checkbox"
+                                                                value=""
+                                                                id="seminarCheckBox{{ seminar.id }}"
+                                                                name="seminarCheckBox{{ seminar.id }}"
+                                                                onclick="reset_payment_button()"
+                                                                data-price="{{ seminar.base_price }}"
+                                                                data-id="{{ seminar.id }}"
+                                                        />
+                                                        <label
+                                                                class="form-check-label"
+                                                                for="seminarCheckBox{{ seminar.id }}"
+                                                        ></label>
+                                                    </div>
+                                                </td>
+                                                <td>{{ seminar.get_subject_display }}</td>
+                                                <td>{{ seminar.course_content }}</td>
+                                                <td>
+                                                    {{ seminar.date_and_time|date:"D, d M" }}- {{ seminar.date_and_time|time:"H:i" }}
                             </td>
                             <td>R{{ seminar.base_price }}</td>
                             <td>{{ seminar.get_spaces_remaining }}</td>
@@ -304,33 +314,35 @@
                           <td>{{ seminar.get_subject_display }}</td>
                           <td>{{ seminar.course_content }}</td>
                           <td>
-                            {{ seminar.date_and_time|date:"D, d M" }} - {{
-                            seminar.date_and_time|time:"H:i" }}
-                          </td>
-                          <td>R{{ seminar.base_price }}</td>
-                          <td>Full</td>
-                        </tr>
-                        {% endfor %}
-                      </tbody>
-                    </table>
-                  </div>
-                  <div class="form-group py-2">
-                    <label for="additionalInfoTextArea" class="form-label mt-4"
-                      >Anything else we should know?</label
-                    >
-                    <textarea
-                      class="form-control text-light"
-                      id="additionalInfoTextArea"
-                      name="additionalInfoTextArea"
-                      rows="3"
-                      maxlength="255"
-                      placeholder="Additional comments..."
-                    ></textarea>
-                  </div>
-                </fieldset>
-              </div>
+                            {{ seminar.date_and_time|date:"D, d M" }} - {{ seminar.date_and_time|time:"H:i" }}
+                                            </td>
+                                            <td>R{{ seminar.base_price }}</td>
+                                            <td>Full</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group py-2">
+                                <label for="additionalInfoTextArea" class="form-label mt-4"
+                                >Anything else we should know?</label
+                                >
+                                <textarea
+                                        class="form-control text-light"
+                                        id="additionalInfoTextArea"
+                                        name="additionalInfoTextArea"
+                                        rows="3"
+                                        maxlength="255"
+                                        placeholder="Additional comments..."
+                                ></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
         <footer class="footer fixed-bottom mt-5 py-3 bg-primary">
           <div class="container">

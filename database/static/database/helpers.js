@@ -48,8 +48,8 @@ function reset_payment_button() {
 
   let tickedCheckboxes = get_ticked_checkboxes();
 
-  if (tickedCheckboxes.length > 0) {
-    let total_cost = get_discounted_cost(tickedCheckboxes, discount);
+    if (tickedCheckboxes.length > 0) {
+        let total_cost = get_total_cost(tickedCheckboxes)
 
     button.disabled = false;
     text.textContent = "Total cost: R" + total_cost;
