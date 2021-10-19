@@ -260,7 +260,7 @@ a:hover {
 }
 
 @media screen and (max-width: 500px) {
-  p-5 {
+  #titleContainer {
     box-shadow: 10px 10px 20px rgb(0 0 0 / 50%);
     padding: 1rem !important;
   }
