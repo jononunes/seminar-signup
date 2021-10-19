@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4!4c3m@f+$$^tw(u0v_*7p4)co-&fp*id15v4w@(qgqvy(gtm9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG:
     PAYFAST_URL = "https://sandbox.payfast.co.za/eng/process"

@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aae22964-0b8f-4ec9-87d2-c87dfdf2ffcd" name="Default Changelist" comment="Added a package model.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/templates/css/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/css/bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/templates/css/bg2.png" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/css/bg2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/templates/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/static/database/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/templates/database/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/database/templates/database/signup_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/templates/hex.png" beforeDir="false" afterPath="$PROJECT_DIR$/database/static/database/hex.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seminar_signup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/seminar_signup/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
