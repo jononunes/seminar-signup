@@ -336,6 +336,9 @@
                                             <tbody>
                                             <fieldset class="form-group py-2">
                                                 {% for seminar in seminars %}
+                                                    {% ifchanged seminar.grade %}
+                                                        <tr><td colspan=5 class="justify-content-center text-center"><b>{{ seminar.get_grade_display }}</b></td></tr>
+                                                    {% endifchanged %}
                                                     <tr>
                                                         <td>
                                                             <div class="form-check">
@@ -364,18 +367,6 @@
                                                     </tr>
                                                 {% endfor %}
                                             </fieldset>
-                                            {% for seminar in closed_seminars %}
-                                                <tr class="text-muted">
-                                                    <td></td>
-                                                    <td>{{ seminar.get_subject_display }} (Full)</td>
-                                                    <td>{{ seminar.course_content }}</td>
-                                                    <td>
-                                                        {{ seminar.date_and_time|date:"D d M" }}
-                                                        - {{ seminar.date_and_time|time:"H:i" }}
-                                                    </td>
-                                                    <td>R{{ seminar.base_price }}</td>
-                                                </tr>
-                                            {% endfor %}
                                             </tbody>
                                         </table>
                                     </div>
