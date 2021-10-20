@@ -309,7 +309,7 @@
                                                                 ></label>
                                                             </div>
                                                         </td>
-                                                        <td>{{ package.name }}</td>
+                                                        <td>{{ package.get_fancy_name }}</td>
                                                         <td>{% for seminar in package.get_seminars_per_line %}
                                                             {{ seminar }}<br>
                                                             {% endfor %}</td>

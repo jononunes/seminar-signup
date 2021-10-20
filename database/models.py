@@ -147,3 +147,7 @@ class Package(models.Model):
 
     def get_seminars_per_line(self):
         return [s.get_one_liner() for s in self.seminars.all()]
+
+    def get_fancy_name(self):
+        grade = [s.get_grade_display() for s in self.seminars.all()][0]
+        return f"{grade} {self.name}"

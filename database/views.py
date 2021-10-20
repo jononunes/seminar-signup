@@ -14,7 +14,7 @@ def get_homepage_context():
     context = {
         'subject_info': Seminar.get_distinct_subjects(),
         'seminars': Seminar.get_open_seminars(),
-        'packages': Package.objects.all(),
+        'packages': sorted(Package.objects.all(), key=lambda s: s.get_fancy_name()),
         'closed_seminars': Seminar.get_closed_seminars(),
         'merchant_id': settings.PAYFAST_MERCHANT_ID,
         'merchant_key': settings.PAYFAST_MERCHANT_KEY,
