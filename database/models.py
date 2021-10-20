@@ -151,3 +151,6 @@ class Package(models.Model):
     def get_fancy_name(self):
         grade = [s.get_grade_display() for s in self.seminars.all()][0]
         return f"{grade} {self.name}"
+
+    def get_seminar_ids(self):
+        return ",".join([str(s.id) for s in self.seminars.all()])

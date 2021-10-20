@@ -302,8 +302,8 @@
                                                                         id="packageCheckBox{{ package.id }}"
                                                                         name="packageCheckBox{{ package.id }}"
                                                                         onclick="reset_payment_button()"
-                                                                        data-price="price"
-                                                                        data-id="ids"
+                                                                        data-price="{{ package.get_price }}"
+                                                                        data-id="{{ package.get_seminar_ids }}"
                                                                 />
                                                                 <label
                                                                         class="form-check-label"
@@ -394,7 +394,7 @@
             <div class="container">
                 <div class="d-flex justify-content-center">
                     <h3 class="text-center" id="paymentText">
-                        Please select at least one seminar
+                        Please select at least one seminar/package
                     </h3>
                 </div>
                 <div class="d-flex justify-content-center">

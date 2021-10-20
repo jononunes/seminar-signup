@@ -9,14 +9,39 @@ function get_package_checkboxes() {
   return document.querySelectorAll('[id^="packageCheckBox"]');
 }
 
-function get_ticked_checkboxes() {
-  let allCheckboxes = get_seminar_checkboxes();
+function get_ticked_seminar_checkboxes() {
   let tickedCheckboxes = [];
 
-  for (let i = 0; i < allCheckboxes.length; ++i) {
-    let checkbox = allCheckboxes[i];
+  let seminar_checkboxes = get_seminar_checkboxes();
+  for (let i = 0; i < seminar_checkboxes.length; ++i) {
+    let checkbox = seminar_checkboxes[i];
     if (checkbox.checked) tickedCheckboxes.push(checkbox);
   }
+
+  return tickedCheckboxes;
+}
+
+function get_ticked_package_checkboxes() {
+  let tickedCheckboxes = [];
+
+  let package_checkboxes = get_package_checkboxes();
+  for (let i = 0; i < package_checkboxes.length; ++i) {
+    let checkbox = package_checkboxes[i];
+    if (checkbox.checked) tickedCheckboxes.push(checkbox);
+  }
+
+  return tickedCheckboxes;
+}
+
+function get_ticked_checkboxes() {
+  let tickedCheckboxes = get_ticked_seminar_checkboxes();
+  let ticked_package_checkboxes = get_ticked_package_checkboxes();
+
+  for (let i = 0; i < ticked_package_checkboxes.length; ++i) {
+    let checkbox = ticked_package_checkboxes[i];
+    tickedCheckboxes.push(checkbox);
+  }
+
   return tickedCheckboxes;
 }
 
@@ -33,23 +58,6 @@ function get_total_cost(tickedCheckboxes) {
   return totalCost.toFixed(2);
 }
 
-function get_discounted_cost(tickedCheckboxes, discountPercent) {
-  let discountedCost = 0.0;
-
-  for (let i = 0; i < tickedCheckboxes.length; i++) {
-    let checkboxCost = parseFloat(
-      tickedCheckboxes[i].getAttribute("data-price")
-    );
-    let thisDiscount = discountPercent * i;
-
-    if (thisDiscount > discount_cap) thisDiscount = discount_cap;
-
-    discountedCost += checkboxCost * (1 - thisDiscount);
-  }
-
-  return discountedCost.toFixed(2);
-}
-
 function reset_payment_button() {
   const button = document.getElementById("paymentButton");
   const text = document.getElementById("paymentText");
@@ -64,7 +72,7 @@ function reset_payment_button() {
     button.className = "btn-grad";
   } else {
     button.disabled = true;
-    text.textContent = "Please select at least one seminar";
+    text.textContent = "Please select at least one seminar/package";
     button.className = "btn-grad";
   }
 }
@@ -75,6 +83,28 @@ function uuidv4() {
       v = c == "x" ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
+}
+
+function get_all_chosen_seminars() {
+  if (get_ticked_package_checkboxes().length > 0) {
+    let ticked_package_checkboxes = get_ticked_package_checkboxes();
+    let chosen_seminars = ticked_package_checkboxes[0].getAttribute("data-id")
+    for (let i = 1; i < ticked_package_checkboxes.length; i++) {
+      chosen_seminars += "," + ticked_package_checkboxes[i].getAttribute("data-id");
+    }
+    return chosen_seminars;
+  }
+
+  else if (get_ticked_seminar_checkboxes().length > 0) {
+    let ticked_seminar_checkboxes = get_ticked_seminar_checkboxes();
+    let chosen_seminars = ticked_seminar_checkboxes[0].getAttribute("data-id")
+    for (let i = 1; i < ticked_seminar_checkboxes.length; i++) {
+      chosen_seminars += "," + ticked_seminar_checkboxes[i].getAttribute("data-id");
+    }
+    return chosen_seminars;
+  }
+
+  return "";
 }
 
 function generate_payment_info() {
@@ -89,7 +119,7 @@ function generate_payment_info() {
 
   // Calculate the total amount
   let tickedCheckboxes = get_ticked_checkboxes();
-  let total_cost = get_discounted_cost(tickedCheckboxes, discount);
+  let total_cost = get_total_cost(tickedCheckboxes);
 
   // Payment ID
   let payment_id = uuidv4();
@@ -117,10 +147,7 @@ function generate_payment_info() {
     parent_covid_acceptance.checked + "," + student_covid_acceptance.checked;
 
   // Chosen seminars
-  let seminar_info = tickedCheckboxes[0].getAttribute("data-id");
-  for (let i = 1; i < tickedCheckboxes.length; i++) {
-    seminar_info += "," + tickedCheckboxes[i].getAttribute("data-id");
-  }
+  let seminar_info = get_all_chosen_seminars();
 
   // Additional info
   const additional_info_field = document.getElementById(
@@ -132,7 +159,7 @@ function generate_payment_info() {
 
   amount_field.value = total_cost;
   item_name_field.value =
-    "Registration fee for " + tickedCheckboxes.length + " seminar(s)";
+    "Registration fee for " + seminar_info.split(",").length + " seminar(s)";
   m_payment_id_field.value = payment_id;
   custom_str1_field.value = student_information;
   custom_str2_field.value = covid_info;
