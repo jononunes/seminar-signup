@@ -1,8 +1,16 @@
 const discount = 0.1;
 const discount_cap = 0.6;
 
+function get_seminar_checkboxes() {
+  return document.querySelectorAll('[id^="seminarCheckBox"]');
+}
+
+function get_package_checkboxes() {
+  return document.querySelectorAll('[id^="packageCheckBox"]');
+}
+
 function get_ticked_checkboxes() {
-  let allCheckboxes = document.querySelectorAll('[id^="seminarCheckBox"]');
+  let allCheckboxes = get_seminar_checkboxes();
   let tickedCheckboxes = [];
 
   for (let i = 0; i < allCheckboxes.length; ++i) {
@@ -131,4 +139,19 @@ function generate_payment_info() {
   custom_str3_field.value = seminar_info;
   custom_str4_field.value = additional_info_field.value;
   custom_str5_field.value = cell_number.value;
+}
+
+function reset_checkboxes() {
+  let seminarCheckboxes = get_seminar_checkboxes()
+  for (let i = 0; i < seminarCheckboxes.length; ++i) {
+    let checkbox = seminarCheckboxes[i];
+    checkbox.checked = false;
+  }
+
+  let packageCheckboxes = get_package_checkboxes()
+  for (let i = 0; i < packageCheckboxes.length; ++i) {
+    let checkbox = packageCheckboxes[i];
+    checkbox.checked = false;
+  }
+  reset_payment_button()
 }
