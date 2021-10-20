@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.datetime_safe import datetime
 
 
 class Person(models.Model):
@@ -51,6 +52,9 @@ class Seminar(models.Model):
 
     def is_full(self):
         return self.get_spaces_remaining() <= 0
+
+    def get_one_liner(self):
+        return f"{self.get_subject_display()} [{datetime.strftime(self.date_and_time, '%a %d %b - %H:%M')}]"
 
     @staticmethod
     def get_distinct_subjects():
@@ -136,3 +140,10 @@ class Package(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_price(self):
+        price = float(sum([s.base_price for s in self.seminars.all()])) * (1.0 - float(self.discount / 100))
+        return f"{price:.2f}"
+
+    def get_seminars_per_line(self):
+        return [s.get_one_liner() for s in self.seminars.all()]
