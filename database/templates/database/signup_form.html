@@ -315,7 +315,7 @@
                                                         <td>{% for seminar in package.get_seminars_per_line %}
                                                             {{ seminar }}<br>
                                                             {% endfor %}</td>
-                                                        <td>R{{ package.get_price }}</td>
+                                                        <td>R{{ package.get_price }} ({{ package.discount|floatformat:0 }}% discount)</td>
                                                     </tr>
                                                 {% endfor %}
                                             </fieldset>
